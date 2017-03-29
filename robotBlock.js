@@ -1,4 +1,22 @@
-Blockly.Blocks['Avancer'] = {
+Blockly.Blocks['Avancer'] = {  
+  helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',  
+  init: function() {    
+    this.jsonInit({      
+      "previousStatement": null,      
+      "nextStatement": null    
+    });    
+    this.appendDummyInput()        
+      .appendField("Avancer")        
+      .appendField(new Blockly.FieldDropdown([["25 %", "25"],                                                 
+                                              ["50 %", "50"],                                                 
+                                              ["75 %", "75"],                                                 
+                                              ["100 %", "100"]]),                                                     
+                                              "Vitesse");    
+    this.setTooltip('Fait avancer le robot');    
+    this.setOutput(true, 'Vitesse');    
+    this.setColour(300);   }};
+
+/*Blockly.Blocks['Avancer'] = {
   helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',
   init: function() {
     this.jsonInit({
@@ -10,7 +28,7 @@ Blockly.Blocks['Avancer'] = {
     this.setColour(300);
     this.setTooltip('Fait avancer le robot');
    }
-};
+};*/
 
 Blockly.Blocks['Reculer'] = {
   helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',
