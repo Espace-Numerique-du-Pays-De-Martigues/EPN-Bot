@@ -14,7 +14,9 @@ Blockly.Blocks['Avancer'] = { 
                                               "Vitesse");    
     this.setTooltip('Fait avancer le robot');    
     this.setOutput(true, 'Vitesse');    
-    this.setColour(300);   }};
+    this.setColour(300);   
+  }
+};
 
 /*Blockly.Blocks['Avancer'] = {
   helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',
@@ -172,6 +174,16 @@ Blockly.Blocks['VERT'] = {
   }
 };
 
+Blockly.Blocks['ORANGE'] = {  
+  helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',  
+  init: function() {    
+    this.appendDummyInput()        
+      .appendField("ORANGE");    
+    this.setOutput(true, 'Couleur');    
+    this.setColour(95);    
+    this.setTooltip('');  
+  }
+};
 Blockly.Blocks['ROUGE'] = {
   helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',
   init: function() {
