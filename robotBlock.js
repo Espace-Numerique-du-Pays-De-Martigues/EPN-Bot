@@ -1,10 +1,10 @@
-/*Blockly.Blocks['Avancer'] = {  
+Blockly.Blocks['Avancer'] = {  
   helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',  
   init: function() {    
-    this.jsonInit({      
+   /* this.jsonInit({      
       "previousStatement": null,      
       "nextStatement": null    
-    });    
+    });  */  
     this.appendDummyInput()        
       .appendField("Avancer")        
       .appendField(new Blockly.FieldDropdown([["25 %", "25"],                                                 
@@ -16,9 +16,9 @@
     this.setOutput(true, 'Vitesse');    
     this.setColour(300);   
   }
-};*/
+};
 
-Blockly.Blocks['Avancer'] = {
+/*Blockly.Blocks['Avancer'] = {
   helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',
   init: function() {
     this.jsonInit({
@@ -30,7 +30,7 @@ Blockly.Blocks['Avancer'] = {
     this.setColour(300);
     this.setTooltip('Fait avancer le robot');
    }
-};
+};*/
 
 Blockly.Blocks['Reculer'] = {
   helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',
@@ -180,7 +180,7 @@ Blockly.Blocks['ORANGE'] = { 
     this.appendDummyInput()        
       .appendField("ORANGE");    
     this.setOutput(true, 'Couleur');    
-    this.setColour(95);    
+    this.setColour(21);    
     this.setTooltip('');  
   }
 };
