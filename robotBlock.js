@@ -285,7 +285,6 @@ Blockly.Blocks['loop_dist_sup'] = {
   }
 };
 
-
 Blockly.Blocks['if_inf'] = {
   helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',
   init: function() {
@@ -299,6 +298,36 @@ Blockly.Blocks['if_inf'] = {
         .setCheck(null)
         .appendField("alors");
     this.setColour(210);
+    this.setTooltip('');
+  }
+};
+
+Blockly.Blocks['if_color'] = {
+  helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',
+ /* init: function() {
+    this.jsonInit({
+      "previousStatement": null,
+      "nextStatement": null
+    });*/
+  init: function() {
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(210);
+    this.appendDummyInput()
+        .appendField("Si couleur détecté");
+
+    this.appendValueInput('Couleur')
+        .appendField("Couleur")
+        .setCheck('Couleur')
+        .setAlign(Blockly.ALIGN_RIGHT);
+
+   /* this.appendValueInput("Couleur")
+        .setCheck('Number')
+        .appendField("si distance (en cm) <");*/
+    this.setInputsInline(true);
+    this.appendStatementInput("Faire")
+        .setCheck(null)
+        .appendField("alors");
     this.setTooltip('');
   }
 };
