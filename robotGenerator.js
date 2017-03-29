@@ -163,7 +163,7 @@ Blockly.Arduino['if_color'] = function(block) {
   var couleur = Blockly.Arduino.valueToCode(block, 'Couleur', Blockly.Arduino.ORDER_ATOMIC)||'VERT';
   var statements_faire = Blockly.Arduino.statementToCode(block, 'Faire');
 
-  var code = 'if (robotDuLAB.getColorZone() < ' + couleur +  ')\n{\n' +
+  var code = 'if (strcascmp(robotDuLAB.getColorZone(),' + couleur + ')==0)\n{\n' +
               statements_faire + '} \n';
 
   return code;
