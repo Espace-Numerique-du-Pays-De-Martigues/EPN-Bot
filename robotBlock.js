@@ -8,7 +8,7 @@ Blockly.Blocks['Avancer'] = { 
     this.appendDummyInput()        
       .appendField("Avancer")     
       .appendField(new Blockly.FieldDropdown([["25 %", "25"],                                                 
-                                              ["56 %", "50"],                                                 
+                                              ["50 %", "50"],                                                 
                                               ["75 %", "75"],                                                 
                                               ["100 %", "100"]]),                                                     
                                               "Vitesse");    
