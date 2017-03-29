@@ -13,7 +13,7 @@ Blockly.Blocks['Avancer'] = { 
                                               ["100 %", "100"]]),                                                     
                                               "Vitesse");    
     this.setTooltip('Fait avancer le robot');    
-    this.setOutput(true, 'Vitesse');    
+    /*this.setOutput(true, 'Vitesse');  */  
     this.setColour(300);   
   }
 };
