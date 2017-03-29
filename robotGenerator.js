@@ -157,6 +157,18 @@ Blockly.Arduino['if_inf'] = function(block) {
   return code;
 };
 
+Blockly.Arduino['if_color'] = function(block) {
+  Blockly.Arduino.setups_["setup_robotdulab"] = setup_robotdulab;
+  Blockly.Arduino.definitions_["define_robotdulab"] = define_robotdulab;
+  var couleur = Blockly.Arduino.valueToCode(block, 'Couleur', Blockly.Arduino.ORDER_ATOMIC)||'VERT';
+  var statements_faire = Blockly.Arduino.statementToCode(block, 'Faire');
+
+  var code = 'if (robotDuLAB.getColorZone() < ' + couleur +  ')\n{\n' +
+              statements_faire + '} \n';
+
+  return code;
+};
+
 Blockly.Arduino['if_sup'] = function(block) {
   Blockly.Arduino.setups_["setup_robotdulab"] = setup_robotdulab;
   Blockly.Arduino.definitions_["define_robotdulab"] = define_robotdulab;
