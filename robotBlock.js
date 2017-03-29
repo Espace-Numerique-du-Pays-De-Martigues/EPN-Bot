@@ -6,12 +6,12 @@ Blockly.Blocks['Avancer'] = { 
       "nextStatement": null    
     });  
     this.appendDummyInput()        
-      /*.appendField("Avancer")   */     
-      .appendField(new Blockly.FieldDropdown([["25 %", "25"],                                                 
+      .appendField("Avancer")     ;
+      /*.appendField(new Blockly.FieldDropdown([["25 %", "25"],                                                 
                                               ["50 %", "50"],                                                 
                                               ["75 %", "75"],                                                 
                                               ["100 %", "100"]]),                                                     
-                                              "Vitesse");    
+                                              "Vitesse");    */
     this.setTooltip('Fait avancer le robot');    
     this.setOutput(true, 'Vitesse');    
     this.setColour(300);   
