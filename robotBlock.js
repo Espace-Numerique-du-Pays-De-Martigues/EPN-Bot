@@ -6,7 +6,7 @@ Blockly.Blocks['Avancer'] = { 
       "nextStatement": null    
     });  
     this.appendDummyInput()        
-      .appendField("Avancer")     ;
+      .appendField("Avancer")     
       .appendField(new Blockly.FieldDropdown([["25 %", "25"],                                                 
                                               ["50 %", "50"],                                                 
                                               ["75 %", "75"],                                                 
