@@ -330,6 +330,23 @@ Blockly.Blocks['loop_dist_sup'] = {
   }
 };
 
+Blockly.Blocks['loop_color_ligne'] = {
+  helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',
+  init: function() {
+    this.appendValueInput("Couleur")
+        .setCheck('color')
+        .appendField("tant que la ligne de couleur");
+    this.setInputsInline(true);
+    this.appendStatementInput("Faire")
+        .setCheck(null)
+        .appendField("faire");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(120);
+    this.setTooltip('');
+  }
+};
+
 Blockly.Blocks['if_inf'] = {
   helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',
   init: function() {
