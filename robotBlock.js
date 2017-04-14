@@ -258,8 +258,6 @@ Blockly.Blocks['BLANC'] = {
     this.appendDummyInput()
         .appendField("BLANC");
     this.setOutput(true, 'Couleur');
-    this.HSV_SATURATION(0.0);
-    this.HSV_VALUE(0.100);
     this.setColour(0);
     this.setTooltip('');
   }
