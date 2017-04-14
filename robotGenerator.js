@@ -125,6 +125,26 @@ Blockly.Arduino['JAUNE'] = function (block) {
   return  [ code,  Blockly.Arduino.ORDER_ATOMIC ];
 };
 
+Blockly.Arduino['BLANC'] = function (block) {
+  var code  ="BLANC";
+  return  [ code,  Blockly.Arduino.ORDER_ATOMIC ];
+};
+
+Blockly.Arduino['ROSE'] = function (block) {
+  var code  ="ROSE";
+  return  [ code,  Blockly.Arduino.ORDER_ATOMIC ];
+};
+
+Blockly.Arduino['GRIS'] = function (block) {
+  var code  ="GRIS";
+  return  [ code,  Blockly.Arduino.ORDER_ATOMIC ];
+};
+
+Blockly.Arduino['NOIR'] = function (block) {
+  var code  ="NOIR";
+  return  [ code,  Blockly.Arduino.ORDER_ATOMIC ];
+};
+
 Blockly.Arduino['loop_dist_inf'] = function(block) {
   Blockly.Arduino.setups_["setup_robotdulab"] = setup_robotdulab;
   Blockly.Arduino.definitions_["define_robotdulab"] = define_robotdulab;
