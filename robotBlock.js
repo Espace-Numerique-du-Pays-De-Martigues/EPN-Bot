@@ -258,7 +258,7 @@ Blockly.Blocks['BLANC'] = {
     this.appendDummyInput()
         .appendField("BLANC");
     this.setOutput(true, 'Couleur');
-    this.setColour(white);
+    this.setColour(59);
     this.setTooltip('');
   }
 };
@@ -280,7 +280,7 @@ Blockly.Blocks['GRIS'] = {
     this.appendDummyInput()
         .appendField("GRIS");
     this.setOutput(true, 'Couleur');
-    this.setColour(50);
+    this.setColour(43);
     this.setTooltip('');
   }
 };
