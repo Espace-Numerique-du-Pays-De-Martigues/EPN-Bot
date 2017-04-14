@@ -334,8 +334,9 @@ Blockly.Blocks['loop_color_ligne'] = {
   helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',
   init: function() {
     this.appendValueInput("Couleur")
-        .setCheck('color')
+        .setCheck('Couleur')
         .appendField("tant que la ligne de couleur");
+        .setAlign(Blockly.ALIGN_RIGHT);
     this.setInputsInline(true);
     this.appendStatementInput("Faire")
         .setCheck(null)
