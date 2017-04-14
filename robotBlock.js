@@ -152,9 +152,7 @@ Blockly.Blocks['Animation'] = {
         .appendField(new Blockly.FieldDropdown([["Couleur", "COULEUR"], 
                                                 ["Arc en ciel", "ARC_EN_CIEL"], 
                                                 ["Arc en ciel cyclique", "ARC_EN_CIEL_CYCLIQUE"], 
-                                                ["Couleur cyclique", "COULEUR_CYCLIQUE"]
-                                                ["Clignotant droit", "CLIGNOTANT_DROIT"]
-                                                ["Clignotant gauche", "CLIGNOTANT_GAUCHE"]]), 
+                                                ["Couleur cyclique", "COULEUR_CYCLIQUE"]]), 
                                                     "Animation");
         
     this.setTooltip('Permet de choisir le motif d\'animation de l\'anneau de LED');
