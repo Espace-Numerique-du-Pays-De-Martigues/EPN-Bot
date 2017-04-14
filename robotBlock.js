@@ -335,12 +335,8 @@ Blockly.Blocks['loop_color_ligne'] = {
   init: function() {
     this.appendValueInput("Couleur")
         .setCheck('Couleur')
-        .appendField("tant que la ligne de couleur");
-        .setAlign(Blockly.ALIGN_RIGHT);
+        .appendField("Suivre la ligne de couleur");
     this.setInputsInline(true);
-    this.appendStatementInput("Faire")
-        .setCheck(null)
-        .appendField("faire");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(120);
