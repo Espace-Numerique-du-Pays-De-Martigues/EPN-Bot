@@ -145,6 +145,16 @@ Blockly.Arduino['loop_dist_sup'] = function(block) {
   return code;
 };
 
+Blockly.Arduino['loop_color_ligne'] = function(block) {
+  Blockly.Arduino.setups_["setup_robotdulab"] = setup_robotdulab;
+  Blockly.Arduino.definitions_["define_robotdulab"] = define_robotdulab;
+  var couleur = Blockly.Arduino.valueToCode(block, 'Couleur', Blockly.Arduino.ORDER_ATOMIC)||'VERT';
+  var statements_do = Blockly.Arduino.statementToCode(block, 'Faire');
+
+  var code = 'while (robotDuLAB.getligne() = ' + couleur +')\n{\n'+ statements_do +'}\n';
+  return code;
+};
+
 Blockly.Arduino['if_inf'] = function(block) {
   Blockly.Arduino.setups_["setup_robotdulab"] = setup_robotdulab;
   Blockly.Arduino.definitions_["define_robotdulab"] = define_robotdulab;
