@@ -338,9 +338,9 @@ Blockly.Blocks['loop_color_ligne'] = {
         .appendField("Suivre la ligne de couleur");
     this.appendStatementInput("Faire")
         .setCheck(null)
-        .appendField("faire");
+        /*.appendField("faire")*/;
     this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
+    /*this.setNextStatement(true, null);*/
     this.setColour(120);
     this.setTooltip('');
   }
