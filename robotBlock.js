@@ -251,6 +251,53 @@ Blockly.Blocks['JAUNE'] = {
   }
 };
 
+
+Blockly.Blocks['BLANC'] = {
+  helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',
+  init: function() {
+    this.appendDummyInput()
+        .appendField("BLANC");
+    Blockly.HSV_SATURATION = 0.0;
+    Blockly.HSV_VALUE = 0.100;
+    this.setOutput(true, 'Couleur');
+    this.setColour(0);
+    this.setTooltip('');
+  }
+};
+
+Blockly.Blocks['ROSE'] = {
+  helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',
+  init: function() {
+    this.appendDummyInput()
+        .appendField("ROSE");
+    this.setOutput(true, 'Couleur');
+    this.setColour(5);
+    this.setTooltip('');
+  }
+};
+
+Blockly.Blocks['GRIS'] = {
+  helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',
+  init: function() {
+    this.appendDummyInput()
+        .appendField("GRIS");
+    this.setOutput(true, 'Couleur');
+    this.setColour(50);
+    this.setTooltip('');
+  }
+};
+
+Blockly.Blocks['NOIR'] = {
+  helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',
+  init: function() {
+    this.appendDummyInput()
+        .appendField("NOIR");
+    this.setOutput(true, 'Couleur');
+    this.setColour(50);
+    this.setTooltip('');
+  }
+};
+
 Blockly.Blocks['loop_dist_inf'] = {
   helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',
   init: function() {
