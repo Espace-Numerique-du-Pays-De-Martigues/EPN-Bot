@@ -391,7 +391,7 @@ Blockly.Blocks['if_color'] = {
     this.setNextStatement(true, null);
     this.setColour(210);
     this.appendDummyInput()
-        .appendField("Si couleur détecté");
+        .appendField("Si couleur zone détecté");
 
     this.appendValueInput('Couleur')
         .appendField("Couleur")
