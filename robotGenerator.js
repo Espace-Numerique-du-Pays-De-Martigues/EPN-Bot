@@ -218,7 +218,7 @@ Blockly.Arduino['if_color'] = function(block) {
   var statements_sinon = Blockly.Arduino.statementToCode(block, 'Sinon');
   
   var code = 'if (strcascmp(robotDuLAB.getColorZone(),' + couleur + ')==0)\n{\n' +
-              statements_faire + '} \nelse\n{\n' +
+              statements_faire + '}\nelse\n{\n' +
               statements_sinon + '} \n';
 
   return code;
