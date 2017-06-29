@@ -188,10 +188,10 @@ Blockly.Arduino['if_color_ligne'] = function(block) {
   Blockly.Arduino.definitions_["define_robotdulab"] = define_robotdulab;
   var dropdown_option = block.getFieldValue('Couleur_ligne');
   //var value_option = Blockly.Arduino.valueToCode(block, 'Couleur_ligne', Blockly.Arduino.ORDER_ATOMIC);
-  var code  = "robotDuLAB.Avancer("+dropdown_option+");\n";
+  //var code  = "robotDuLAB.Avancer("+dropdown_option+");\n";
   //var couleur = Blockly.Arduino.valueToCode(block, 'Couleur', Blockly.Arduino.ORDER_ATOMIC)||'VERT';
   var statements_faire = Blockly.Arduino.statementToCode(block, 'Faire');
- /* if(dropdown_option==80)
+  if(dropdown_option==80)
   {
       var code = 'if (analogRead(GRAYSCALE_SENSOR)<' + dropdown_option + ')\n{\n' +
               statements_faire + '} \n';
@@ -205,7 +205,7 @@ Blockly.Arduino['if_color_ligne'] = function(block) {
   {
       var code = 'if (analogRead(GRAYSCALE_SENSOR)>' + dropdown_option + ')\n{\n' +
               statements_faire + '} \n';
-  }*/
+  }
 
   return code;
 };
