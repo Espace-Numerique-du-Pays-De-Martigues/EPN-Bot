@@ -186,11 +186,26 @@ Blockly.Arduino['if_inf'] = function(block) {
 Blockly.Arduino['if_color_ligne'] = function(block) {
   Blockly.Arduino.setups_["setup_robotdulab"] = setup_robotdulab;
   Blockly.Arduino.definitions_["define_robotdulab"] = define_robotdulab;
-  var couleur = Blockly.Arduino.valueToCode(block, 'Couleur', Blockly.Arduino.ORDER_ATOMIC)||'VERT';
+  var dropdown_option = block.getFieldValue('Couleur_ligne');
+  //var value_option = Blockly.Arduino.valueToCode(block, 'Couleur_ligne', Blockly.Arduino.ORDER_ATOMIC);
+  //var code  = "robotDuLAB.Avancer("+dropdown_option+");\n";
+  //var couleur = Blockly.Arduino.valueToCode(block, 'Couleur', Blockly.Arduino.ORDER_ATOMIC)||'VERT';
   var statements_faire = Blockly.Arduino.statementToCode(block, 'Faire');
-
-  var code = 'if (strcascmp(robotDuLAB.getColorLigne(),' + couleur + ')==0)\n{\n' +
+  if(dropdown_option==80)
+  {
+      var code = 'if (analogRead(GRAYSCALE_SENSOR)<' + dropdown_option + ')\n{\n' +
               statements_faire + '} \n';
+  }
+  else if(dropdown_option==120)
+  {
+      var code = 'if ((analogRead(GRAYSCALE_SENSOR)>=' + (dropdown_option-20) + ')&&(analogRead(GRAYSCALE_SENSOR)<=' + (dropdown_option+20) + '))\n{\n' +
+              statements_faire + '} \n';
+  }
+  else if(dropdown_option==160)
+  {
+      var code = 'if (analogRead(GRAYSCALE_SENSOR)>' + dropdown_option + ')\n{\n' +
+              statements_faire + '} \n';
+  }
 
   return code;
 };
@@ -200,7 +215,7 @@ Blockly.Arduino['if_color'] = function(block) {
   Blockly.Arduino.definitions_["define_robotdulab"] = define_robotdulab;
   var couleur = Blockly.Arduino.valueToCode(block, 'Couleur', Blockly.Arduino.ORDER_ATOMIC)||'VERT';
   var statements_faire = Blockly.Arduino.statementToCode(block, 'Faire');
-
+  
   var code = 'if (strcascmp(robotDuLAB.getColorZone(),' + couleur + ')==0)\n{\n' +
               statements_faire + '} \n';
 
