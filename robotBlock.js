@@ -408,9 +408,12 @@ Blockly.Blocks['if_color'] = {
         .appendField("si distance (en cm) <");*/
     this.setInputsInline(true);
     this.appendStatementInput("Faire")
+        .appendField("Faire")
         .setCheck(null);
+    
     this.setInputsInline(true);
     this.appendStatementInput("Sinon")
+        .appendField("Sinon")
         .setCheck(null)
         .appendField("alors");
     this.setTooltip('');
