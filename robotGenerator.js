@@ -5,13 +5,14 @@ goog.require('Blockly.Arduino');
 var setup_robotdulab = "robotDuLAB.begin();\n";
 
 var define_robotdulab = '#include <Servo.h>\n'+
-  '#include <Adafruit_NeoPixel.h>\n'+
+  '//#include <Adafruit_NeoPixel.h>\n'+
   '#include "EPNBot.h"\n'+
   '#define TRIGGER_PIN 2 // broche trig du capteur US HC-SR04\n'+
   '#define ECHO_PIN 4 // broche echo du capteur US HC-SR04\n'+
   '#define ROUE_DROITE_PIN 5\n'+
   '#define ROUE_GAUCHE_PIN 3\n'+
-  '#define ANNEAU_LED_PIN 6\n\n'+
+  '#define ANNEAU_LED_PIN 6\n'+
+  '#define GRAYSCALE_SENSOR 0 // broche du capteur suiveur de ligne\n\n'+
   'RobotDuLAB robotDuLAB(TRIGGER_PIN, ECHO_PIN, ROUE_DROITE_PIN, ROUE_GAUCHE_PIN, ANNEAU_LED_PIN);\n';
 
 Blockly.Arduino ['Avancer'] = function (block)  {
