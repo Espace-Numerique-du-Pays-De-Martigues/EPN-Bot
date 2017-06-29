@@ -198,7 +198,7 @@ Blockly.Arduino['if_color_ligne'] = function(block) {
   }
   else if(dropdown_option==120)
   {
-      var code = 'if ((analogRead(GRAYSCALE_SENSOR)>=' + (dropdown_option-20) + ')&&(analogRead(GRAYSCALE_SENSOR)<=' + (dropdown_option+20) + '))\n{\n' +
+      var code = 'if ((analogRead(GRAYSCALE_SENSOR)>=' + (dropdown_option-20) + ')&&(analogRead(GRAYSCALE_SENSOR)<=' + (parseInt(dropdown_option)+parseInt(20)) + '))\n{\n' +
               statements_faire + '} \n';
   }
   else if(dropdown_option==160)
