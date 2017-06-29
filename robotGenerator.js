@@ -216,10 +216,17 @@ Blockly.Arduino['if_color'] = function(block) {
   var couleur = Blockly.Arduino.valueToCode(block, 'Couleur', Blockly.Arduino.ORDER_ATOMIC)||'VERT';
   var statements_faire = Blockly.Arduino.statementToCode(block, 'Faire');
   var statements_sinon = Blockly.Arduino.statementToCode(block, 'Sinon');
-  
-  var code = 'if (strcascmp(robotDuLAB.getColorZone(),' + couleur + ')==0)\n{\n' +
-              statements_faire + '}\nelse\n{\n' +
-              statements_sinon + '} \n';
+  if(typeof(statements_sinon) != 'undefined')
+  {
+        var code = 'if (strcascmp(robotDuLAB.getColorZone(),' + couleur + ')==0)\n{\n' +
+                    statements_faire + '}\nelse\n{\n' +
+                    statements_sinon + '} \n';
+  }
+  else
+  {
+        var code = 'if (strcascmp(robotDuLAB.getColorZone(),' + couleur + ')==0)\n{\n' +
+                    statements_faire + '}\n';
+  }
 
   return code;
 };
