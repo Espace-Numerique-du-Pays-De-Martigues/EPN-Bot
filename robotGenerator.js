@@ -73,7 +73,7 @@ Blockly.Arduino ['AnimerAnneauLed'] = function (block)  {
   var animation = Blockly.Arduino.valueToCode(block, 'Animation', Blockly.Arduino.ORDER_ATOMIC)||'COULEUR';
   var pin = Blockly.Arduino.valueToCode(block, 'Pin_Led_avant', Blockly.Arduino.ORDER_ATOMIC);
 
-  var code  ="robotDuLAB.AnimerAnneauLed("+animation+","+couleur+","pin");\n";
+  var code  ="robotDuLAB.AnimerAnneauLed("+animation+","+couleur+","+pin+");\n";
   return  code;
 };
 
