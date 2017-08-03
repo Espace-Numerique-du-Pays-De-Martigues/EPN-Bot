@@ -124,6 +124,11 @@ Blockly.Blocks['AnimerAnneauLed'] = {
         .appendField("Animation")
         .setCheck('Animation')
         .setAlign(Blockly.ALIGN_RIGHT);
+    
+    this.appendValueInput('Pin Led avant')
+        .appendField("Pin Led avant")
+        .setCheck('Number');
+        .setAlign(Blockly.ALIGN_RIGHT);
 
     this.setTooltip('Le robot attends un temps donné en millisecondes avant de passer à l\'instruction suivante');
   }
