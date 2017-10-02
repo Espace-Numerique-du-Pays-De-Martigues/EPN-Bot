@@ -7,29 +7,34 @@ var setup_robotdulab = "robotDuLAB.begin();\n";
 var define_robotdulab = '#include <Servo.h>\n'+
   '//#include <Adafruit_NeoPixel.h>\n'+
   '#include "EPNBot.h"\n'+
-  '#define TRIGGER_PIN 2 // broche trig du capteur US HC-SR04\n'+
+  '#define TRIGGER_PIN 12 // broche trig du capteur US HC-SR04\n'+
   '#define ECHO_PIN 4 // broche echo du capteur US HC-SR04\n'+
-  '#define ROUE_DROITE_PIN 5\n'+
-  '#define ROUE_GAUCHE_PIN 3\n'+
+  '#define ROUE_DROITE_PIN 11\n'+
+  '#define ROUE_GAUCHE_PIN 10\n'+
   '#define ANNEAU_LED_PIN 6\n'+
-  '#define GRAYSCALE_SENSOR 0 // broche du capteur suiveur de ligne\n\n'+
-  'RobotDuLAB robotDuLAB(TRIGGER_PIN, ECHO_PIN, ROUE_DROITE_PIN, ROUE_GAUCHE_PIN, ANNEAU_LED_PIN);\n';
+  //'#define GRAYSCALE_SENSOR 0 // broche du capteur suiveur de ligne\n\n'+
+  '#define RELAI_ALIM_MOTEUR 2 // broche du relai alimentation des moteurs\n'+
+  '#define INTER_BOT 13 // broche trig du capteur US HC-SR04\n'+
+    
 
-Blockly.Arduino ['Avancer'] = function (block)  {
+  'EPNBot EpnBot(TRIGGER_PIN, ECHO_PIN, ROUE_DROITE_PIN, ROUE_GAUCHE_PIN, ANNEAU_LED_PIN, GRAYSCALE_SENSOR, RELAI_ALIM_MOTEUR);\n';
+  //'RobotDuLAB robotDuLAB(TRIGGER_PIN, ECHO_PIN, ROUE_DROITE_PIN, ROUE_GAUCHE_PIN, ANNEAU_LED_PIN);\n';
+
+/*Blockly.Arduino ['Avancer'] = function (block)  {
   Blockly.Arduino.setups_["setup_robotdulab"] = setup_robotdulab;
   Blockly.Arduino.definitions_["define_robotdulab"] = define_robotdulab; 
   var dropdown_option = block.getFieldValue('Vitesse');
   var value_option = Blockly.Arduino.valueToCode(block, 'Vitesse', Blockly.Arduino.ORDER_ATOMIC);
   var code  = "robotDuLAB.Avancer("+dropdown_option+");\n";
   return  code;
-};
+};*/
 
-/*Blockly.Arduino ['Avancer'] = function (block)  {
+Blockly.Arduino ['Avancer'] = function (block)  {
   Blockly.Arduino.setups_["setup_robotdulab"] = setup_robotdulab;
   Blockly.Arduino.definitions_["define_robotdulab"] = define_robotdulab;
   var code  ="robotDuLAB.Avancer();\n";
   return  code;
-};*/
+};
 
 Blockly.Arduino ['Reculer'] = function (block)  {
   Blockly.Arduino.setups_["setup_robotdulab"] = setup_robotdulab;
