@@ -367,9 +367,9 @@ Blockly.Blocks['if_color_ligne'] = {
     this.setColour(210);
     this.appendDummyInput()
         .appendField("Si couleur suiveur de ligne détecté")
-        .appendField(new Blockly.FieldDropdown([["BLANC", "80"],                                                 
-                                              ["GRIS", "120"],                                                 
-                                              ["NOIR", "160"]]),                                                     
+        .appendField(new Blockly.FieldDropdown([["BLANC", "100"],                                                 
+                                              ["GRIS", "135"],                                                 
+                                              ["NOIR", "170"]]),                                                     
                                               "Couleur_ligne");    
 
     /*this.appendValueInput('Couleur')
