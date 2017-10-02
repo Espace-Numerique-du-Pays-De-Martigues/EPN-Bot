@@ -355,6 +355,25 @@ Blockly.Blocks['if_inf'] = {
   }
 };
 
+Blockly.Blocks['if_inter_bot'] = {
+  helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',
+  init: function() {
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(210);
+    this.appendDummyInput()
+        .appendField("Si interrupteur du robot epn-bot")
+        .appendField(new Blockly.FieldDropdown([["HIGH", "HIGH"],                                                 
+                                              ["LOW", "LOW"]]),                                                     
+                                              "Etat_inter");    
+    this.setInputsInline(true);
+    this.appendStatementInput("Faire")
+        .setCheck(null)
+        .appendField("alors");
+    this.setTooltip('');
+  }
+};
+
 Blockly.Blocks['if_color_ligne'] = {
   helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',
  /* init: function() {
