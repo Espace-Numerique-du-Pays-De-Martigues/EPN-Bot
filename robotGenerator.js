@@ -14,7 +14,7 @@ var define_epnbot = '#include <Servo.h>\n'+
   '#define ANNEAU_LED_PIN 6\n'+
   //'#define GRAYSCALE_SENSOR 0 // broche du capteur suiveur de ligne\n\n'+
   '#define RELAI_ALIM_MOTEUR 2 // broche du relai alimentation des moteurs\n'+
-  '#define INTER_BOT 13 // broche trig du capteur US HC-SR04\n'+
+  '#define INTER_BOT 13 // interrupteur robot\n'+
     
 
   'EPNBot EpnBot(TRIGGER_PIN, ECHO_PIN, ROUE_DROITE_PIN, ROUE_GAUCHE_PIN, ANNEAU_LED_PIN, GRAYSCALE_SENSOR, RELAI_ALIM_MOTEUR);\n';
