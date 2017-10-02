@@ -202,7 +202,7 @@ Blockly.Arduino['if_color_ligne'] = function(block) {
       var code = 'if (EpnBot.Getsuiveurligne()<' + dropdown_option + ')\n{\n' +
               statements_faire + '} \n';
   }
-  /*else if(dropdown_option==135)   //gris (corrige à gauche)
+  else if(dropdown_option==135)   //gris (corrige à gauche)
   {
       var code = 'if ((EpnBot.Getsuiveurligne()>=' + (dropdown_option-35) + ')&&(EpnBot.Getsuiveurligne()<=' + (parseInt(dropdown_option)+parseInt(35)) + '))\n{\n' +
               statements_faire + '} \n';
@@ -211,7 +211,7 @@ Blockly.Arduino['if_color_ligne'] = function(block) {
   {
       var code = 'if (EpnBot.Getsuiveurligne()>' + dropdown_option + ')\n{\n' +
               statements_faire + '} \n';
-  }*/
+  }
 
   return code;
 };
