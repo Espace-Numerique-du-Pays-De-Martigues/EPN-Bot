@@ -2,7 +2,7 @@ goog.provide('Blockly.Arduino.Robotdulab');
 goog.require('Blockly.Arduino');
 
 
-var setup_robotdulab = "robotDuLAB.begin();\n";
+var setup_robotdulab = "EpnBot.begin();\n";
 
 var define_robotdulab = '#include <Servo.h>\n'+
   '//#include <Adafruit_NeoPixel.h>\n'+
