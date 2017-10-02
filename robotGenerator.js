@@ -197,19 +197,19 @@ Blockly.Arduino['if_color_ligne'] = function(block) {
   //var code  = "robotDuLAB.Avancer("+dropdown_option+");\n";
   //var couleur = Blockly.Arduino.valueToCode(block, 'Couleur', Blockly.Arduino.ORDER_ATOMIC)||'VERT';
   var statements_faire = Blockly.Arduino.statementToCode(block, 'Faire');
-  if(dropdown_option==80)
+  if(dropdown_option==100) //blanc
   {
-      var code = 'if (analogRead(GRAYSCALE_SENSOR)<' + dropdown_option + ')\n{\n' +
+      var code = 'if (EpnBot.Getsuiveurligne()<' + dropdown_option + ')\n{\n' +
               statements_faire + '} \n';
   }
-  else if(dropdown_option==120)
+  else if(dropdown_option==135)   //gris (corrige à gauche)
   {
-      var code = 'if ((analogRead(GRAYSCALE_SENSOR)>=' + (dropdown_option-20) + ')&&(analogRead(GRAYSCALE_SENSOR)<=' + (parseInt(dropdown_option)+parseInt(20)) + '))\n{\n' +
+      var code = 'if ((EpnBot.Getsuiveurligne()>=' + (dropdown_option-35) + ')&&(EpnBot.Getsuiveurligne()<=' + (parseInt(dropdown_option)+parseInt(35)) + '))\n{\n' +
               statements_faire + '} \n';
   }
-  else if(dropdown_option==160)
+  else if(dropdown_option==170)   //noir (corrige à droite)
   {
-      var code = 'if (analogRead(GRAYSCALE_SENSOR)>' + dropdown_option + ')\n{\n' +
+      var code = 'if (EpnBot.Getsuiveurligne()>' + dropdown_option + ')\n{\n' +
               statements_faire + '} \n';
   }
 
@@ -224,7 +224,7 @@ Blockly.Arduino['if_color'] = function(block) {
   var statements_sinon = Blockly.Arduino.statementToCode(block, 'Sinon');
   if(typeof(statements_sinon) != 'undefined')
   {
-        var code = 'if (strcascmp(robotDuLAB.getColorZone(),' + couleur + ')==0)\n{\n' +
+        var code = 'if (strcascmp(EpnBot.Getcolorzone(),' + couleur + ')==0)\n{\n' +
                     statements_faire + '}\nelse\n{\n' +
                     statements_sinon + '} \n';
   }
