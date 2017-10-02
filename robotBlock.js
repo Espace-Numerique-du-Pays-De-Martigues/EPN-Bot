@@ -96,11 +96,7 @@ Blockly.Blocks['EtatRobot'] = { 
       "nextStatement": null    
     });  
     this.appendDummyInput()        
-      .appendField("Etat robot")     
-      .appendField(new Blockly.FieldDropdown([["StandBy", "0"],                                                 
-                                              ["Marche", "1"],                                                 
-                                              ["Erreur", "2"]]),                                                     
-                                              "etat_robot");    
+      .appendField("Etat robot");  
     this.setTooltip('Etat du robot');   
   }
 };
