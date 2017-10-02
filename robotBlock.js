@@ -14,7 +14,7 @@
                                               "Vitesse");    
     this.setTooltip('Fait avancer le robot');    
     /*this.setOutput(true, 'Vitesse');  */  
-    this.setColour(300);   
+    /*this.setColour(300);   
   }
 };*/
 
