@@ -88,7 +88,7 @@ Blockly.Blocks['TournerADroite'] = {
    }
 };
 
-Blockly.Blocks['Etat_robot'] = {  
+Blockly.Blocks['EtatRobot'] = {  
   helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',  
   init: function() {    
     this.jsonInit({      
