@@ -471,9 +471,9 @@ Blockly.Blocks['EtatRobot'] = { 
       "previousStatement": null,      
       "nextStatement": null    
     });  
-    this.appendDummyInput()        
-      .appendField("Etat robot");  
+    this.appendDummyInput();
     this.setTooltip('Etat du robot'); 
+    this.setOutput(true, 'Variable');
     this.setColour(24);  
   }
 };
