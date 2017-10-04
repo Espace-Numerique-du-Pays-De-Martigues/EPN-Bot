@@ -88,19 +88,6 @@ Blockly.Blocks['TournerADroite'] = {
    }
 };
 
-Blockly.Blocks['EtatRobot'] = {  
-  helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',  
-  init: function() {    
-    this.jsonInit({      
-      "previousStatement": null,      
-      "nextStatement": null    
-    });  
-    this.appendDummyInput()        
-      .appendField("Etat robot");  
-    this.setTooltip('Etat du robot');   
-  }
-};
-
 Blockly.Blocks['Attendre'] = {
   helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',
   init: function() {
@@ -473,5 +460,20 @@ Blockly.Blocks['if_sup'] = {
 
     this.setColour(210);
     this.setTooltip('');
+  }
+};
+
+
+Blockly.Blocks['EtatRobot'] = {  
+  helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',  
+  init: function() {    
+    this.jsonInit({      
+      "previousStatement": null,      
+      "nextStatement": null    
+    });  
+    this.appendDummyInput()        
+      .appendField("Etat robot");  
+    this.setTooltip('Etat du robot'); 
+    this.setColour(24);  
   }
 };
