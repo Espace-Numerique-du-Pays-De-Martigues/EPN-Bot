@@ -483,33 +483,22 @@ Blockly.Blocks['AffectationVariable'] = { 
     this.jsonInit({      
       "previousStatement": null,      
       "nextStatement": null    
-    });  
-    var OPERATORS =
-        [[Blockly.Msg.MATH_ADDITION_SYMBOL, 'ADD'],
-         [Blockly.Msg.MATH_SUBTRACTION_SYMBOL, 'MINUS'],
-         [Blockly.Msg.MATH_MULTIPLICATION_SYMBOL, 'MULTIPLY'],
-         [Blockly.Msg.MATH_DIVISION_SYMBOL, 'DIVIDE'],
-         [Blockly.Msg.MATH_POWER_SYMBOL, 'POWER']];
-    //this.setOutput(true, 'Number');
+    });
+    var OPERATORS = "EQ";
+    
+    this.setOutput(true, 'Boolean');
     this.appendValueInput('A')
         .setCheck('Variable');
     this.appendValueInput('B')
         .setCheck('Number')
-        .appendField(new Blockly.FieldDropdown(OPERATORS), 'OP');
+        .appendField("=");
     this.setInputsInline(true);
     // Assign 'this' to a variable for use in the tooltip closure below.
     var thisBlock = this;
     this.setTooltip(function() {
-      var mode = thisBlock.getFieldValue('OP');
-      var TOOLTIPS = {
-        'ADD': Blockly.Msg.MATH_ARITHMETIC_TOOLTIP_ADD,
-        'MINUS': Blockly.Msg.MATH_ARITHMETIC_TOOLTIP_MINUS,
-        'MULTIPLY': Blockly.Msg.MATH_ARITHMETIC_TOOLTIP_MULTIPLY,
-        'DIVIDE': Blockly.Msg.MATH_ARITHMETIC_TOOLTIP_DIVIDE,
-        'POWER': Blockly.Msg.MATH_ARITHMETIC_TOOLTIP_POWER
-      };
-      return TOOLTIPS[mode];
+      var op = thisBlock.getFieldValue('OP');
     });
+    this.prevBlocks_ = [null, null];
     this.setColour(24);  
   }
 };
