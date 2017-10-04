@@ -280,15 +280,15 @@
 <div id="blockly" class="container">
     <h3 class="text-center">Blockly</h3>
     <div id="blocklyDiv" style="height: 700px;"></div>
-    <font color="#bdbdbd">
+    //<font color="#bdbdbd">
+    <font color="#0f0808">
     <xml id="toolbox" style="display: none">
        <category name="Robot" colour="300">
          <block type="Avancer"></block>
          <block type="Reculer"></block>
          <block type="Arreter"></block>
          <block type="TournerAGauche"></block>
-         <block type="TournerADroite"></block>     
-         <block type="EtatRobot"></block>
+         <block type="TournerADroite"></block>   
          <block type="Attendre">
             <value name="DELAY_TIME">
                 <block type="math_number">
@@ -374,7 +374,11 @@
 
         <category name="Math" colour="230">
           <block type="math_number"></block>
-          <block type="math_arithmetic"></block>
+          <block type="math_arithmetic"></block>  
+        </category>
+        
+        <category name="Variable" colour="24">
+          <block type="EtatRobot"></block>
         </category>
 
     </xml>
