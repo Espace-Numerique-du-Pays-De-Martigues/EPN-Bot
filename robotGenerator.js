@@ -192,9 +192,8 @@ Blockly.Arduino['if_inf'] = function(block) {
 Blockly.Arduino['if_inter_bot'] = function(block) {
   Blockly.Arduino.setups_["setup_epnbot"] = setup_epnbot;
   Blockly.Arduino.definitions_["define_epnbot"] = define_epnbot;
-  var dropdown_option = block.getFieldValue('Etat_inter');
   var statements_faire = Blockly.Arduino.statementToCode(block, 'Faire');
-  var code = 'if (digitalRead(INTER_BOT)==' + dropdown_option + ')\n{\n' +
+  var code = 'if (digitalRead(INTER_BOT)==LOW)\n{\n' +
               statements_faire + '} \n';
 
   return code;
