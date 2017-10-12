@@ -362,10 +362,7 @@ Blockly.Blocks['if_inter_bot'] = {
     this.setNextStatement(true, null);
     this.setColour(210);
     this.appendDummyInput()
-        .appendField("Si interrupteur du robot epn-bot")
-        .appendField(new Blockly.FieldDropdown([["HIGH", "HIGH"],                                                 
-                                              ["LOW", "LOW"]]),                                                     
-                                              "Etat_inter");    
+        .appendField("Si interrupteur du robot epn-bot appuyé");    
     this.setInputsInline(true);
     this.appendStatementInput("Faire")
         .setCheck(null)
