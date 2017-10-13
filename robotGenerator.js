@@ -4,7 +4,7 @@ goog.require('Blockly.Arduino');
 
 var setup_epnbot = "EpnBot.begin();\n";
 
-var define_epnbot = '#include <Servo.h>\n'+
+var define_epnbot = //'#include <Servo.h>\n'+
  // '#include <Adafruit_NeoPixel.h>\n'+
   '#include "EPNBot.h"\n'+
   '#define TRIGGER_PIN 12 // broche trig du capteur US HC-SR04\n'+
