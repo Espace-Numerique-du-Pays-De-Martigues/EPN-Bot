@@ -480,7 +480,7 @@ Blockly.Blocks['AffectationVariable'] = { 
     });
     //var OPERATORS = "EQ";
     
-    this.setOutput(true, 'Affectation');
+    /*this.setOutput(true, 'Affectation');*/
     this.appendValueInput('A')
         .setCheck('Variable');
     this.appendValueInput('B')
