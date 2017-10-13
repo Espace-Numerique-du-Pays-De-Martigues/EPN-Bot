@@ -88,6 +88,34 @@ Blockly.Blocks['TournerADroite'] = {
    }
 };
 
+Blockly.Blocks['CorrigeAGauche'] = {
+  helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',
+  init: function() {
+    this.jsonInit({
+      "previousStatement": null,
+      "nextStatement": null
+    });
+    this.appendDummyInput()
+        .appendField("Corrige à gauche lors d'un suivi de ligne");
+    this.setColour(300);
+    this.setTooltip('Fait corriger à gauche le robot');
+   }
+};
+
+Blockly.Blocks['CorrigeADroite'] = {
+  helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',
+  init: function() {
+    this.jsonInit({
+      "previousStatement": null,
+      "nextStatement": null
+    });
+    this.appendDummyInput()
+        .appendField("Corrige à droite lors d'un suivi de ligne");
+    this.setColour(300);
+    this.setTooltip('Fait corriger à droite le robot');
+   }
+};
+
 Blockly.Blocks['Attendre'] = {
   helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',
   init: function() {
