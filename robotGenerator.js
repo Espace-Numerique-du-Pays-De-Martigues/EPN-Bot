@@ -260,8 +260,8 @@ Blockly.Arduino['if_sup'] = function(block) {
 };
 
 Blockly.Arduino['EtatRobot'] = function (block)  {
-  var code  ="EtatRobot";
-  return  code;
+  var code  ="etat_robot";
+  return  [ code,  Blockly.Arduino.ORDER_ATOMIC ];
 };
 
 Blockly.Arduino['AffectationVariable'] = function (block)  {
