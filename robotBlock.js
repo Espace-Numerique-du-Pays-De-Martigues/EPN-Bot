@@ -480,7 +480,7 @@ Blockly.Blocks['AffectationVariable'] = { 
     });
     var OPERATORS = "EQ";
     
-    this.setOutput(true, 'Boolean');
+    //this.setOutput(true, 'Boolean');
     this.appendValueInput('A')
         .setCheck('Variable');
     this.appendValueInput('B')
@@ -488,7 +488,7 @@ Blockly.Blocks['AffectationVariable'] = { 
         .appendField("=");
     this.setInputsInline(true);
     // Assign 'this' to a variable for use in the tooltip closure below.
-    var thisBlock = this;
+    //var thisBlock = this;
     this.setTooltip(function() {
       var op = thisBlock.getFieldValue('OP');
     });
