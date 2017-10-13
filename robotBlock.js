@@ -501,7 +501,7 @@ Blockly.Blocks['ConvertisseurVariableNumber'] = { 
   helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',  
   init: function() {    
     this.setOutput(true, 'Number');
-    this.appendValueInput('Variable')
+    this.appendValueInput('variable')
         .setCheck('Variable');
     this.setInputsInline(true);
     this.setTooltip("Utilisation d'une variable dans une condition");
