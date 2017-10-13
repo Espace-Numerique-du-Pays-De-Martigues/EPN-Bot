@@ -263,7 +263,7 @@ Blockly.Arduino['AffectationVariable'] = function (block)  {
   Blockly.Arduino.setups_["setup_epnbot"] = setup_epnbot;
   Blockly.Arduino.definitions_["define_epnbot"] = define_epnbot;
   var variable = Blockly.Arduino.valueToCode(block, 'A', Blockly.Arduino.ORDER_ATOMIC);
-  var number = Blockly.Arduino.valueToCode(block, 'B', Blockly.Arduino.ORDER_ATOMIC);
+  var number = Blockly.Arduino.valueToCode(block, 'B', Blockly.Arduino.ORDER_ATOMIC)||'0';
   var code = '' + variable + ' = ' + number + ';\n';
   return  code;
 };
