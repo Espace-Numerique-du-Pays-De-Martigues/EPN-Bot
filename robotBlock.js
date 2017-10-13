@@ -481,7 +481,7 @@ Blockly.Blocks['AffectationVariable'] = { 
       "previousStatement": null,      
       "nextStatement": null    
     });
-    var OPERATORS = "EQ";
+    /*var OPERATORS = "EQ";
     
     this.setOutput(true, 'Boolean');
     this.appendValueInput('A')
@@ -494,7 +494,7 @@ Blockly.Blocks['AffectationVariable'] = { 
     var thisBlock = this;
     this.setTooltip(function() {
       var op = thisBlock.getFieldValue('OP');
-    });
+    });*/
     this.prevBlocks_ = [null, null];
     this.setColour(24);  
   }
