@@ -15,6 +15,7 @@ var define_epnbot = //'#include <Servo.h>\n'+
   //'#define GRAYSCALE_SENSOR 0 // broche du capteur suiveur de ligne\n\n'+
   '#define RELAI_ALIM_MOTEUR 2 // broche du relai alimentation des moteurs\n'+
   '#define INTER_BOT 13 // interrupteur robot\n'+
+  '#define GRAYSCALE_SENSOR 0 // broche analogique du capteur de gris\n'+
     
   '\n'+
     
@@ -22,7 +23,7 @@ var define_epnbot = //'#include <Servo.h>\n'+
 
   '\n'+
     
-  'EPNBot EpnBot(TRIGGER_PIN, ECHO_PIN, ROUE_DROITE_PIN, ROUE_GAUCHE_PIN, ANNEAU_LED_PIN, GRAYSCALE_SENSOR, RELAI_ALIM_MOTEUR);\n';
+  'EPNBot EpnBot(TRIGGER_PIN, ECHO_PIN, ROUE_DROITE_PIN, ROUE_GAUCHE_PIN, ANNEAU_LED_PIN, GRAYSCALE_SENSOR, RELAI_ALIM_MOTEUR, INTER_BOT);\n';
   //'RobotDuLAB robotDuLAB(TRIGGER_PIN, ECHO_PIN, ROUE_DROITE_PIN, ROUE_GAUCHE_PIN, ANNEAU_LED_PIN);\n';
 
 /*Blockly.Arduino ['Avancer'] = function (block)  {
