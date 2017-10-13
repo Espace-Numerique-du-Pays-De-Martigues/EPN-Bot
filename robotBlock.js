@@ -96,9 +96,9 @@ Blockly.Blocks['CorrigeAGauche'] = {
       "nextStatement": null
     });
     this.appendDummyInput()
-        .appendField("Corrige à gauche lors d'un suivi de ligne");
+        .appendField("Corrige à gauche");
     this.setColour(300);
-    this.setTooltip('Fait corriger à gauche le robot');
+    this.setTooltip('Fait corriger à gauche le robot lors d\'un suivi de ligne');
    }
 };
 
@@ -110,9 +110,9 @@ Blockly.Blocks['CorrigeADroite'] = {
       "nextStatement": null
     });
     this.appendDummyInput()
-        .appendField("Corrige à droite lors d'un suivi de ligne");
+        .appendField("Corrige à droite");
     this.setColour(300);
-    this.setTooltip('Fait corriger à droite le robot');
+    this.setTooltip('Fait corriger à droite le robot lors d\'un suivi de ligne');
    }
 };
 
