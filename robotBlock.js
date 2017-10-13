@@ -462,11 +462,7 @@ Blockly.Blocks['if_sup'] = {
 
 Blockly.Blocks['EtatRobot'] = {  
   helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',  
-  init: function() {    
-    this.jsonInit({      
-      "previousStatement": null,      
-      "nextStatement": null    
-    });  
+  init: function() {
     this.appendDummyInput()
         .appendField("Etat du robot");
     this.setTooltip('Etat du robot'); 
