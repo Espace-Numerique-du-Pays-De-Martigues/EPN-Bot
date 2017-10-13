@@ -471,7 +471,7 @@ Blockly.Blocks['EtatRobot'] = { 
   }
 };
 
-/*Blockly.Blocks['AffectationVariable'] = {  
+Blockly.Blocks['AffectationVariable'] = {  
   helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',  
   init: function() {    
     this.jsonInit({      
@@ -495,4 +495,4 @@ Blockly.Blocks['EtatRobot'] = { 
     this.prevBlocks_ = [null, null];
     this.setColour(24);  
   }
-};*/
+};
