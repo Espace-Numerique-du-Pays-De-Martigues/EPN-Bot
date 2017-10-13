@@ -480,7 +480,7 @@ Blockly.Blocks['AffectationVariable'] = { 
     });
     //var OPERATORS = "EQ";
     
-    //this.setOutput(true, 'Boolean');
+    this.setOutput(true, 'Affectation');
     this.appendValueInput('A')
         .setCheck('Variable');
     this.appendValueInput('B')
@@ -493,6 +493,18 @@ Blockly.Blocks['AffectationVariable'] = { 
       var op = thisBlock.getFieldValue('OP');
     });
     this.prevBlocks_ = [null, null];*/
+    this.setColour(24);  
+  }
+};
+
+Blockly.Blocks['ConvertisseurVariableNumber'] = {  
+  helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',  
+  init: function() {    
+    this.setOutput(true, 'Number');
+    this.appendValueInput('Variable')
+        .setCheck('Variable');
+    this.setInputsInline(true);
+    this.setTooltip("Utilisation d'une variable dans une condition");
     this.setColour(24);  
   }
 };
