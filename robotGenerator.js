@@ -259,6 +259,11 @@ Blockly.Arduino['if_sup'] = function(block) {
   return code;
 };
 
+Blockly.Arduino['EtatRobot'] = function (block)  {
+  var code  ="EtatRobot";
+  return  code;
+};
+
 Blockly.Arduino['AffectationVariable'] = function (block)  {
   Blockly.Arduino.setups_["setup_epnbot"] = setup_epnbot;
   Blockly.Arduino.definitions_["define_epnbot"] = define_epnbot;
