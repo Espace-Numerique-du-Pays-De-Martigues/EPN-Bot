@@ -280,5 +280,6 @@ Blockly.Arduino['AffectationVariable'] = function (block)  {
 
 Blockly.Arduino ['ConvertisseurVariableNumber'] = function (block)  {
   var variable = Blockly.Arduino.valueToCode(block, 'variable', Blockly.Arduino.ORDER_ATOMIC);
+  //return variable;
   return variable;
 };
