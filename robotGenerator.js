@@ -31,42 +31,57 @@ var define_epnbot = //'#include <Servo.h>\n'+
   Blockly.Arduino.definitions_["define_epnbot"] = define_epnbot; 
   var dropdown_option = block.getFieldValue('Vitesse');
   var value_option = Blockly.Arduino.valueToCode(block, 'Vitesse', Blockly.Arduino.ORDER_ATOMIC);
-  var code  = "robotDuLAB.Avancer("+dropdown_option+");\n";
+  var code  = "EpnBot.Avancer("+dropdown_option+");\n";
   return  code;
 };*/
 
 Blockly.Arduino ['Avancer'] = function (block)  {
   Blockly.Arduino.setups_["setup_epnbot"] = setup_epnbot;
   Blockly.Arduino.definitions_["define_epnbot"] = define_epnbot;
-  var code  ="robotDuLAB.Avancer();\n";
+  var code  ="EpnBot.Avancer();\n";
   return  code;
 };
 
 Blockly.Arduino ['Reculer'] = function (block)  {
   Blockly.Arduino.setups_["setup_epnbot"] = setup_epnbot;
   Blockly.Arduino.definitions_["define_epnbot"] = define_epnbot;
-  var code  ="robotDuLAB.Reculer();\n";
+  var code  ="EpnBot.Reculer();\n";
   return  code;
 };
 
 Blockly.Arduino ['Arreter'] = function (block)  {
   Blockly.Arduino.setups_["setup_epnbot"] = setup_epnbot;
   Blockly.Arduino.definitions_["define_epnbot"] = define_epnbot;
-  var code  ="robotDuLAB.Arreter();\n";
+  var code  ="EpnBot.Arreter();\n";
   return  code;
 };
 
 Blockly.Arduino ['TournerAGauche'] = function (block)  {
   Blockly.Arduino.setups_["setup_epnbot"] = setup_epnbot;
   Blockly.Arduino.definitions_["define_epnbot"] = define_epnbot;
-  var code  ="robotDuLAB.TournerAGauche();\n";
+  var code  ="EpnBot.TournerAGauche();\n";
   return  code;
 };
 
 Blockly.Arduino ['TournerADroite'] = function (block)  {
   Blockly.Arduino.setups_["setup_epnbot"] = setup_epnbot;
   Blockly.Arduino.definitions_["define_epnbot"] = define_epnbot;
-  var code  ="robotDuLAB.TournerADroite();\n";
+  var code  ="EpnBot.TournerADroite();\n";
+  return  code;
+};
+
+
+Blockly.Arduino ['CorrigeAGauche'] = function (block)  {
+  Blockly.Arduino.setups_["setup_epnbot"] = setup_epnbot;
+  Blockly.Arduino.definitions_["define_epnbot"] = define_epnbot;
+  var code  ="EpnBot.CorrigeAGauche();\n";
+  return  code;
+};
+
+Blockly.Arduino ['CorrigeADroite'] = function (block)  {
+  Blockly.Arduino.setups_["setup_epnbot"] = setup_epnbot;
+  Blockly.Arduino.definitions_["define_epnbot"] = define_epnbot;
+  var code  ="EpnBot.CorrigeADroite();\n";
   return  code;
 };
 
@@ -84,14 +99,14 @@ Blockly.Arduino ['AnimerAnneauLed'] = function (block)  {
   var animation = Blockly.Arduino.valueToCode(block, 'Animation', Blockly.Arduino.ORDER_ATOMIC)||'COULEUR';
   var pin = Blockly.Arduino.valueToCode(block, 'Pin_Led_avant', Blockly.Arduino.ORDER_ATOMIC);
 
-  var code  ="robotDuLAB.AnimerAnneauLed("+animation+","+couleur+","+pin+");\n";
+  var code  ="EpnBot.AnimerAnneauLed("+animation+","+couleur+","+pin+");\n";
   return  code;
 };
 
 Blockly.Arduino ['Distance'] = function (block)  {
   Blockly.Arduino.setups_["setup_epnbot"] = setup_epnbot;
   Blockly.Arduino.definitions_["define_epnbot"] = define_epnbot;
-  var code  ="robotDuLAB.getDistanceObstacle();";
+  var code  ="EpnBot.getDistanceObstacle();";
   return [ code,  Blockly.Arduino.ORDER_ATOMIC ];
 };
 
@@ -169,7 +184,7 @@ Blockly.Arduino['loop_dist_inf'] = function(block) {
   var value_while = Blockly.Arduino.valueToCode(block, 'Distance', Blockly.Arduino.ORDER_ATOMIC);
   var statements_do = Blockly.Arduino.statementToCode(block, 'Faire');
 
-  var code = 'while (robotDuLAB.getDistanceObstacle() < ' + value_while +')\n{\n'+ statements_do +'}\n';
+  var code = 'while (EpnBot.getDistanceObstacle() < ' + value_while +')\n{\n'+ statements_do +'}\n';
   return code;
 };
 
@@ -179,7 +194,7 @@ Blockly.Arduino['loop_dist_sup'] = function(block) {
   var value_while = Blockly.Arduino.valueToCode(block, 'Distance', Blockly.Arduino.ORDER_ATOMIC);
   var statements_do = Blockly.Arduino.statementToCode(block, 'Faire');
 
-  var code = 'while (robotDuLAB.getDistanceObstacle() > ' + value_while +')\n{\n'+ statements_do +'}\n';
+  var code = 'while (EpnBot.getDistanceObstacle() > ' + value_while +')\n{\n'+ statements_do +'}\n';
   return code;
 };
 
@@ -189,7 +204,7 @@ Blockly.Arduino['if_inf'] = function(block) {
   var value_distance = Blockly.Arduino.valueToCode(block, 'Distance', Blockly.Arduino.ORDER_ATOMIC) || '20';
   var statements_faire = Blockly.Arduino.statementToCode(block, 'Faire');
 
-  var code = 'if (robotDuLAB.getDistanceObstacle() < ' + value_distance +  ')\n{\n' +
+  var code = 'if (EpnBot.getDistanceObstacle() < ' + value_distance +  ')\n{\n' +
               statements_faire + '} \n';
 
   return code;
@@ -210,7 +225,7 @@ Blockly.Arduino['if_color_ligne'] = function(block) {
   Blockly.Arduino.definitions_["define_epnbot"] = define_epnbot;
   var dropdown_option = block.getFieldValue('Couleur_ligne');
   //var value_option = Blockly.Arduino.valueToCode(block, 'Couleur_ligne', Blockly.Arduino.ORDER_ATOMIC);
-  //var code  = "robotDuLAB.Avancer("+dropdown_option+");\n";
+  //var code  = "EpnBot.Avancer("+dropdown_option+");\n";
   //var couleur = Blockly.Arduino.valueToCode(block, 'Couleur', Blockly.Arduino.ORDER_ATOMIC)||'VERT';
   var statements_faire = Blockly.Arduino.statementToCode(block, 'Faire');
   if(dropdown_option==100) //blanc
@@ -246,7 +261,7 @@ Blockly.Arduino['if_color'] = function(block) {
   }
   else
   {
-        var code = 'if (strcascmp(robotDuLAB.getColorZone(),' + couleur + ')==0)\n{\n' +
+        var code = 'if (strcascmp(EpnBot.getColorZone(),' + couleur + ')==0)\n{\n' +
                     statements_faire + '}\n';
   }
 
@@ -259,7 +274,7 @@ Blockly.Arduino['if_sup'] = function(block) {
   var value_distance = Blockly.Arduino.valueToCode(block, 'Distance', Blockly.Arduino.ORDER_ATOMIC) || '20';
   var statements_faire = Blockly.Arduino.statementToCode(block, 'Faire');
 
-  var code = 'if (robotDuLAB.getDistanceObstacle() > ' + value_distance +  ')\n{\n' +
+  var code = 'if (EpnBot.getDistanceObstacle() > ' + value_distance +  ')\n{\n' +
               statements_faire + '} \n';
 
   return code;
