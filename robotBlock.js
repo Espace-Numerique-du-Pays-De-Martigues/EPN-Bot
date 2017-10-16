@@ -162,21 +162,6 @@ Blockly.Blocks['AnimerAnneauLed'] = {
   }
 };
 
-Blockly.Blocks['Distance'] = {
-  helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',
-  init: function() {
-    this.jsonInit({
-      "previousStatement": null,
-      "nextStatement": null
-    });
-    this.appendDummyInput()
-        .appendField("Distance obstacle");
-    this.setOutput(true, 'Number');
-    this.setColour(300);
-    this.setTooltip('Retourne la distance en centimetre de l\'obstacle');
-   }
-};
-
 Blockly.Blocks['Animation'] = {
   helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',
   init: function() {
@@ -579,4 +564,49 @@ Blockly.Blocks['ConvertisseurVariableNumber'] = { 
     this.setTooltip("Utilisation d'une variable dans une condition");
     this.setColour(24);  
   }
+};
+
+Blockly.Blocks['DistanceObstacle'] = {
+  helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',
+  init: function() {
+    this.jsonInit({
+      "previousStatement": null,
+      "nextStatement": null
+    });
+    this.appendDummyInput()
+        .appendField("Distance obstacle");
+    this.setOutput(true, 'Number');
+    this.setColour(0);
+    this.setTooltip('Retourne la distance en centimetre de l\'obstacle');
+   }
+};
+
+Blockly.Blocks['CouleurZone'] = {
+  helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',
+  init: function() {
+    this.jsonInit({
+      "previousStatement": null,
+      "nextStatement": null
+    });
+    this.appendDummyInput()
+        .appendField("Couleur Zone");
+    this.setOutput(true, 'Number');
+    this.setColour(0);
+    this.setTooltip('Retourne la couleur sous le robot');
+   }
+};
+
+Blockly.Blocks['CouleurLigne'] = {
+  helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',
+  init: function() {
+    this.jsonInit({
+      "previousStatement": null,
+      "nextStatement": null
+    });
+    this.appendDummyInput()
+        .appendField("Couelur Ligne");
+    this.setOutput(true, 'Number');
+    this.setColour(0);
+    this.setTooltip('Retourne la couleur de la ligne (suiveur de ligne)');
+   }
 };
