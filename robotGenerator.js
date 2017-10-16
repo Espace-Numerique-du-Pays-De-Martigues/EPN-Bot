@@ -103,13 +103,6 @@ Blockly.Arduino ['AnimerAnneauLed'] = function (block)  {
   return  code;
 };
 
-Blockly.Arduino ['Distance'] = function (block)  {
-  Blockly.Arduino.setups_["setup_epnbot"] = setup_epnbot;
-  Blockly.Arduino.definitions_["define_epnbot"] = define_epnbot;
-  var code  ="EpnBot.getDistanceObstacle();";
-  return [ code,  Blockly.Arduino.ORDER_ATOMIC ];
-};
-
 Blockly.Arduino['Animation'] = function (block)  {
   var dropdown_option = block.getFieldValue('Animation');
   var value_option = Blockly.Arduino.valueToCode(block, 'Animation', Blockly.Arduino.ORDER_ATOMIC);
@@ -309,4 +302,19 @@ Blockly.Arduino ['ConvertisseurVariableNumber'] = function (block)  {
   var variable = Blockly.Arduino.valueToCode(block, 'variable', Blockly.Arduino.ORDER_ATOMIC);
   //return variable;
   return   [ variable,  Blockly.Arduino.ORDER_ATOMIC ];
+};
+
+Blockly.Arduino ['DistanceObstacle'] = function (block)  {
+  var code  ="EpnBot.getDistanceObstacle();";
+  return [ code,  Blockly.Arduino.ORDER_ATOMIC ];
+};
+
+Blockly.Arduino ['CouleurZone'] = function (block)  {
+  var code  ="EpnBot.getGetcolorzone();";
+  return [ code,  Blockly.Arduino.ORDER_ATOMIC ];
+};
+
+Blockly.Arduino ['CouleurLigne'] = function (block)  {
+  var code  ="EpnBot.Getsuiveurligne();";
+  return [ code,  Blockly.Arduino.ORDER_ATOMIC ];
 };
