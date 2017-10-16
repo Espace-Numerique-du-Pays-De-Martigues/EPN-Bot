@@ -305,16 +305,16 @@ Blockly.Arduino ['ConvertisseurVariableNumber'] = function (block)  {
 };
 
 Blockly.Arduino ['DistanceObstacle'] = function (block)  {
-  var code  ="EpnBot.getDistanceObstacle();";
+  var code  ="EpnBot.getDistanceObstacle()";
   return [ code,  Blockly.Arduino.ORDER_ATOMIC ];
 };
 
 Blockly.Arduino ['CouleurZone'] = function (block)  {
-  var code  ="EpnBot.getGetcolorzone();";
+  var code  ="EpnBot.getGetcolorzone()";
   return [ code,  Blockly.Arduino.ORDER_ATOMIC ];
 };
 
 Blockly.Arduino ['CouleurLigne'] = function (block)  {
-  var code  ="EpnBot.Getsuiveurligne();";
+  var code  ="EpnBot.Getsuiveurligne()";
   return [ code,  Blockly.Arduino.ORDER_ATOMIC ];
 };
