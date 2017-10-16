@@ -590,7 +590,7 @@ Blockly.Blocks['CouleurZone'] = {
     });*/
     this.appendDummyInput()
         .appendField("Couleur Zone");
-    this.setOutput(true, 'Number');
+    this.setOutput(true, 'Text');
     this.setColour(0);
     this.setTooltip('Retourne la couleur sous le robot');
    }
