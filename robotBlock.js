@@ -445,13 +445,14 @@ Blockly.Blocks['if_color'] = {
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(210);
-    this.appendDummyInput()
-        .appendField("Si couleur zone détecté");
 
     this.appendValueInput('Couleur')
         .appendField("Couleur")
         .setCheck('Couleur')
         .setAlign(Blockly.ALIGN_RIGHT);
+    
+    this.appendDummyInput()
+        .appendField("Si couleur zone détecté");
 
    /* this.appendValueInput("Couleur")
         .setCheck('Number')
@@ -485,6 +486,48 @@ Blockly.Blocks['if_sup'] = {
 
     this.setColour(210);
     this.setTooltip('');
+  }
+};
+
+Blockly.Blocks['text_compare'] = {
+  /**
+   * Block for comparison operator.
+   * @this Blockly.Block
+   */
+  helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',
+  init: function() {
+    this.setColour(210);
+    this.setOutput(true, 'Boolean');
+    this.appendValueInput('A');
+    this.appendValueInput('B')
+        .appendField(" = ");
+    this.setInputsInline(true);
+    // Assign 'this' to a variable for use in the tooltip closure below.
+    var thisBlock = this;
+    this.prevBlocks_ = [null, null];
+  },
+  /**
+   * Called whenever anything on the workspace changes.
+   * Prevent mismatched types from being compared.
+   * @this Blockly.Block
+   */
+  onchange: function() {
+    var blockA = this.getInputTargetBlock('A');
+    var blockB = this.getInputTargetBlock('B');
+    // Disconnect blocks that existed prior to this change if they don't match.
+    if (blockA && blockB &&
+        !blockA.outputConnection.checkType_(blockB.outputConnection)) {
+      // Mismatch between two inputs.  Disconnect previous and bump it away.
+      for (var i = 0; i < this.prevBlocks_.length; i++) {
+        var block = this.prevBlocks_[i];
+        if (block === blockA || block === blockB) {
+          block.setParent(null);
+          block.bumpNeighbours_();
+        }
+      }
+    }
+    this.prevBlocks_[0] = blockA;
+    this.prevBlocks_[1] = blockB;
   }
 };
 
