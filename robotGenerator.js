@@ -253,7 +253,7 @@ Blockly.Arduino['if_color'] = function(block) {
   var couleur = Blockly.Arduino.valueToCode(block, 'Couleur', Blockly.Arduino.ORDER_ATOMIC)||'VERT';
   var statements_faire = Blockly.Arduino.statementToCode(block, 'Faire');
   var statements_sinon = Blockly.Arduino.statementToCode(block, 'Sinon');
-  if(typeof(statements_sinon) != 'undefined')
+  /*if(typeof(statements_sinon) != 'undefined')
   {
         var code = 'if (strcmp(EpnBot.Getcolorzone(),' + couleur + ')==0)\n{\n' +
                     statements_faire + '}\nelse\n{\n' +
@@ -263,8 +263,8 @@ Blockly.Arduino['if_color'] = function(block) {
   {
         var code = 'if (strcmp(EpnBot.getColorZone(),' + couleur + ')==0)\n{\n' +
                     statements_faire + '}\n';
-  }
-  /*if(typeof(statements_sinon) != 'undefined')
+  }*/
+  if(typeof(statements_sinon) != 'undefined')
   {
         var code = 'if (strcmp(EpnBot.Getcolorzone(),\"' + couleur + '\")==0)\n{\n' +
                     statements_faire + '}\nelse\n{\n' +
@@ -274,7 +274,7 @@ Blockly.Arduino['if_color'] = function(block) {
   {
         var code = 'if (strcmp(EpnBot.getColorZone(),\"' + couleur + '\")==0)\n{\n' +
                     statements_faire + '}\n';
-  }*/
+  }
 
   return code;
 };
