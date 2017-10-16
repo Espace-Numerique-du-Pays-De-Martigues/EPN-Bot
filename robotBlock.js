@@ -604,7 +604,7 @@ Blockly.Blocks['CouleurLigne'] = {
       "nextStatement": null
     });*/
     this.appendDummyInput()
-        .appendField("Couelur Ligne");
+        .appendField("Couleur Ligne");
     this.setOutput(true, 'Number');
     this.setColour(0);
     this.setTooltip('Retourne la couleur de la ligne (suiveur de ligne)');
