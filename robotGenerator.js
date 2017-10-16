@@ -255,13 +255,13 @@ Blockly.Arduino['if_color'] = function(block) {
   var statements_sinon = Blockly.Arduino.statementToCode(block, 'Sinon');
   if(typeof(statements_sinon) != 'undefined')
   {
-        var code = 'if (strcmp(EpnBot.Getcolorzone(),"' + couleur + '")==0)\n{\n' +
+        var code = 'if (strcmp(EpnBot.Getcolorzone(),\"' + couleur + '\")==0)\n{\n' +
                     statements_faire + '}\nelse\n{\n' +
                     statements_sinon + '} \n';
   }
   else
   {
-        var code = 'if (strcmp(EpnBot.getColorZone(),"' + couleur + '")==0)\n{\n' +
+        var code = 'if (strcmp(EpnBot.getColorZone(),\"' + couleur + '\")==0)\n{\n' +
                     statements_faire + '}\n';
   }
 
@@ -285,7 +285,7 @@ Blockly.Arduino.text_compare = function() {
   var argument0 = Blockly.Arduino.valueToCode(this, 'A', order) || 'text';
   var argument1 = Blockly.Arduino.valueToCode(this, 'B', order) || '0';
  
-  var code = 'strcmp(' + argument0 + ',"' + argument1 +'")==0;
+  var code = 'strcmp(' + argument0 + ',\"' + argument1 +'\")==0;
   
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
