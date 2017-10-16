@@ -496,6 +496,7 @@ Blockly.Blocks['text_compare'] = {
    */
   helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',
   init: function() {
+    this.setTooltip('Compare deux textes');    
     this.setColour(210);
     this.setOutput(true, 'Boolean');
     this.appendValueInput('A');
