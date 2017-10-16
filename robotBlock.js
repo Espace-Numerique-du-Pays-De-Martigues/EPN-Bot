@@ -368,6 +368,24 @@ Blockly.Blocks['if_inf'] = {
   }
 };
 
+Blockly.Blocks['if_sup'] = {
+  helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',
+  init: function() {
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.appendValueInput("Distance")
+        .setCheck('Number')
+        .appendField("si distance (en cm) >");
+    this.setInputsInline(true);
+    this.appendStatementInput("Faire")
+        .setCheck(null)
+        .appendField("alors");
+
+    this.setColour(210);
+    this.setTooltip('');
+  }
+};
+
 Blockly.Blocks['if_inter_bot'] = {
   helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',
   init: function() {
@@ -400,17 +418,7 @@ Blockly.Blocks['if_color_ligne'] = {
         .appendField(new Blockly.FieldDropdown([["BLANC", "100"],                                                 
                                               ["GRIS", "135"],                                                 
                                               ["NOIR", "170"]]),                                                     
-                                              "Couleur_ligne");    
-
-    /*this.appendValueInput('Couleur')
-        .appendField("Couleur")
-        .setCheck('Couleur')
-        .setAlign(Blockly.ALIGN_RIGHT);*/
-    
-
-   /* this.appendValueInput("Couleur")
-        .setCheck('Number')
-        .appendField("si distance (en cm) <");*/
+                                              "Couleur_ligne"); 
     this.setInputsInline(true);
     this.appendStatementInput("Faire")
         .setCheck(null)
@@ -421,11 +429,6 @@ Blockly.Blocks['if_color_ligne'] = {
 
 Blockly.Blocks['if_color'] = {
   helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',
- /* init: function() {
-    this.jsonInit({
-      "previousStatement": null,
-      "nextStatement": null
-    });*/
   init: function() {
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -438,38 +441,12 @@ Blockly.Blocks['if_color'] = {
         .appendField("Couleur")
         .setCheck('Couleur')
         .setAlign(Blockly.ALIGN_RIGHT);
-
-   /* this.appendValueInput("Couleur")
-        .setCheck('Number')
-        .appendField("si distance (en cm) <");*/
+    
     this.setInputsInline(true);
     this.appendStatementInput("Faire")
         .appendField("Faire")
         .setCheck(null);
     
-    this.setInputsInline(true);
-    this.appendStatementInput("Sinon")
-        .appendField("Sinon")
-        .setCheck(null)
-        .appendField("alors");
-    this.setTooltip('');
-  }
-};
-
-Blockly.Blocks['if_sup'] = {
-  helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',
-  init: function() {
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.appendValueInput("Distance")
-        .setCheck('Number')
-        .appendField("si distance (en cm) >");
-    this.setInputsInline(true);
-    this.appendStatementInput("Faire")
-        .setCheck(null)
-        .appendField("alors");
-
-    this.setColour(210);
     this.setTooltip('');
   }
 };
