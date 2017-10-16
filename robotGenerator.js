@@ -280,7 +280,7 @@ Blockly.Arduino['if_sup'] = function(block) {
   return code;
 };
 
-Blockly.Arduino.text_compare = function() {
+Blockly.Arduino['text_compare'] = function() {
   // Comparison operator.
   var argument0 = Blockly.Arduino.valueToCode(this, 'A', order) || 'text';
   var argument1 = Blockly.Arduino.valueToCode(this, 'B', order) || '0';
