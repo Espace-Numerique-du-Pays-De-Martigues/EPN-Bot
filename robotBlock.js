@@ -504,15 +504,15 @@ Blockly.Blocks['text_compare'] = {
         .appendField(" = ");
     this.setInputsInline(true);
     // Assign 'this' to a variable for use in the tooltip closure below.
-    var thisBlock = this;
-    this.prevBlocks_ = [null, null];
-  },
+    /*var thisBlock = this;
+    this.prevBlocks_ = [null, null];*/
+  }
   /**
    * Called whenever anything on the workspace changes.
    * Prevent mismatched types from being compared.
    * @this Blockly.Block
    */
-  onchange: function() {
+  /*onchange: function() {
     var blockA = this.getInputTargetBlock('A');
     var blockB = this.getInputTargetBlock('B');
     // Disconnect blocks that existed prior to this change if they don't match.
@@ -529,7 +529,7 @@ Blockly.Blocks['text_compare'] = {
     }
     this.prevBlocks_[0] = blockA;
     this.prevBlocks_[1] = blockB;
-  }
+  }*/
 };
 
 Blockly.Blocks['EtatRobot'] = {  
