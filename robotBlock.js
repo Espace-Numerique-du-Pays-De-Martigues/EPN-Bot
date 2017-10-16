@@ -569,10 +569,10 @@ Blockly.Blocks['ConvertisseurVariableNumber'] = { 
 Blockly.Blocks['DistanceObstacle'] = {
   helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',
   init: function() {
-    this.jsonInit({
+    /*this.jsonInit({
       "previousStatement": null,
       "nextStatement": null
-    });
+    });*/
     this.appendDummyInput()
         .appendField("Distance obstacle");
     this.setOutput(true, 'Number');
@@ -584,10 +584,10 @@ Blockly.Blocks['DistanceObstacle'] = {
 Blockly.Blocks['CouleurZone'] = {
   helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',
   init: function() {
-    this.jsonInit({
+    /*this.jsonInit({
       "previousStatement": null,
       "nextStatement": null
-    });
+    });*/
     this.appendDummyInput()
         .appendField("Couleur Zone");
     this.setOutput(true, 'Number');
@@ -599,10 +599,10 @@ Blockly.Blocks['CouleurZone'] = {
 Blockly.Blocks['CouleurLigne'] = {
   helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',
   init: function() {
-    this.jsonInit({
+    /*this.jsonInit({
       "previousStatement": null,
       "nextStatement": null
-    });
+    });*/
     this.appendDummyInput()
         .appendField("Couelur Ligne");
     this.setOutput(true, 'Number');
