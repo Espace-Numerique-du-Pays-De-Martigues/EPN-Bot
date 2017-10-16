@@ -296,8 +296,8 @@ Blockly.Arduino.text_compare = function() {
   var argument0 = Blockly.Arduino.valueToCode(this, 'A', order) || 'text';
   var argument1 = Blockly.Arduino.valueToCode(this, 'B', order) || '0';
  
-  //var code = 'strcmp(' + argument0 + ',\"' + argument1 +'\")==0;
-  var code = 'strcmp(' + argument0 + ',' + argument1 +')==0;
+  //var code = 'strcmp(' + argument0 + ',\"' + argument1 +'\")==0';
+  var code = 'strcmp(' + argument0 + ',' + argument1 +')==0';
   
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
