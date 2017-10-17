@@ -465,7 +465,7 @@ Blockly.Blocks['if_color_ligne'] =
         return 'CONTROLS_IF_TOOLTIP_4';
       }
       return '';
-    });/*
+    });
     this.elseifCount_ = 0;
     this.elseCount_ = 0;
   },
@@ -504,7 +504,7 @@ Blockly.Blocks['if_color_ligne'] =
           .appendField('MSG_ELSE');
     }
   },
-  decompose: function(workspace) 
+  /*decompose: function(workspace) 
   {
     var containerBlock = Blockly.Block.obtain(workspace, 'controls_if_if');
     containerBlock.initSvg();
@@ -606,8 +606,8 @@ Blockly.Blocks['if_color_ligne'] =
       }
       clauseBlock = clauseBlock.nextConnection &&
       clauseBlock.nextConnection.targetBlock();
-    }*/
-  }
+    }
+  }*/
 };
 
 Blockly.Blocks['if_color'] = {
