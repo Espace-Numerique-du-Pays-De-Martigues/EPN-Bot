@@ -547,9 +547,9 @@ Blockly.Blocks['if_color_ligne'] =
       {
         case 'controls_if_elseif':
           this.elseifCount_++;
-          /*var ifInput = this.appendValueInput('IF' + this.elseifCount_)
+          var ifInput = this.appendValueInput('IF' + this.elseifCount_)
               .setCheck('Boolean')
-              .appendField('MSG_ELSEI'F);
+              .appendField('MSG_ELSEIF');
           var doInput = this.appendStatementInput('DO' + this.elseifCount_);
           doInput.appendField('MSG_THEN');
           // Reconnect any child blocks.
@@ -560,7 +560,7 @@ Blockly.Blocks['if_color_ligne'] =
           if (clauseBlock.statementConnection_) 
           {
             doInput.connection.connect(clauseBlock.statementConnection_);
-          }*/
+          }
           break;
         case 'controls_if_else':
           /*this.elseCount_++;
