@@ -541,7 +541,7 @@ Blockly.Blocks['if_color_ligne'] =
     this.elseifCount_ = 0;
     // Rebuild the block's optional inputs.
     var clauseBlock = containerBlock.getInputTargetBlock('STACK');
-    /*while (clauseBlock) 
+    while (clauseBlock) 
     {
       switch (clauseBlock.type) 
       {
@@ -574,10 +574,10 @@ Blockly.Blocks['if_color_ligne'] =
           break;
         default:
           throw 'Unknown block type.';
-      }
+      }/*
       clauseBlock = clauseBlock.nextConnection &&
-      clauseBlock.nextConnection.targetBlock();
-    }*/
+      clauseBlock.nextConnection.targetBlock();*/
+    }
   },/*
   saveConnections: function(containerBlock) 
   {
