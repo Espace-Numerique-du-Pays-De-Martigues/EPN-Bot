@@ -422,7 +422,7 @@ Blockly.Blocks['if_inter_bot'] = {
   }
 };*/
 
-Blockly.Blocks['if_color_ligne'] = {
+/*Blockly.Blocks['if_color_ligne'] = {
   helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',
   init: function() {
     this.setColour(210);
@@ -457,11 +457,6 @@ Blockly.Blocks['if_color_ligne'] = {
     this.elseifCount_ = 0;
     this.elseCount_ = 0;
   },
-  /**
-   * Create XML to represent the number of else-if and else inputs.
-   * @return {Element} XML storage element.
-   * @this Blockly.Block
-   */
   mutationToDom: function() {
     if (!this.elseifCount_ && !this.elseCount_) {
       return null;
@@ -475,11 +470,6 @@ Blockly.Blocks['if_color_ligne'] = {
     }
     return container;
   },
-  /**
-   * Parse XML to restore the else-if and else inputs.
-   * @param {!Element} xmlElement XML storage element.
-   * @this Blockly.Block
-   */
   domToMutation: function(xmlElement) {
     this.elseifCount_ = parseInt(xmlElement.getAttribute('elseif'), 10) || 0;
     this.elseCount_ = parseInt(xmlElement.getAttribute('else'), 10) || 0;
@@ -495,12 +485,6 @@ Blockly.Blocks['if_color_ligne'] = {
           .appendField('MSG_ELSE');
     }
   },
-  /**
-   * Populate the mutator's dialog with this block's components.
-   * @param {!Blockly.Workspace} workspace Mutator's workspace.
-   * @return {!Blockly.Block} Root block in mutator.
-   * @this Blockly.Block
-   */
   decompose: function(workspace) {
     var containerBlock = Blockly.Block.obtain(workspace, 'controls_if_if');
     containerBlock.initSvg();
@@ -518,11 +502,6 @@ Blockly.Blocks['if_color_ligne'] = {
     }
     return containerBlock;
   },
-  /**
-   * Reconfigure this block based on the mutator dialog's components.
-   * @param {!Blockly.Block} containerBlock Root block in mutator.
-   * @this Blockly.Block
-   */
   compose: function(containerBlock) {
     // Disconnect the else input blocks and remove the inputs.
     if (this.elseCount_) {
@@ -570,11 +549,6 @@ Blockly.Blocks['if_color_ligne'] = {
           clauseBlock.nextConnection.targetBlock();
     }
   },
-  /**
-   * Store pointers to any connected child blocks.
-   * @param {!Blockly.Block} containerBlock Root block in mutator.
-   * @this Blockly.Block
-   */
   saveConnections: function(containerBlock) {
     var clauseBlock = containerBlock.getInputTargetBlock('STACK');
     var i = 1;
@@ -601,7 +575,7 @@ Blockly.Blocks['if_color_ligne'] = {
           clauseBlock.nextConnection.targetBlock();
     }
   }
-};
+};*/
 
 Blockly.Blocks['if_color'] = {
   helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',
