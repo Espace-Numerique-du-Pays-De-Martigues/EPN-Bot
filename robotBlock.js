@@ -422,7 +422,7 @@ Blockly.Blocks['if_inter_bot'] = {
   }
 };*/
 
-/*Blockly.Blocks['if_color_ligne'] = {
+Blockly.Blocks['if_color_ligne'] = {
   helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',
   init: function() {
     this.setColour(210);
@@ -575,7 +575,7 @@ Blockly.Blocks['if_inter_bot'] = {
           clauseBlock.nextConnection.targetBlock();
     }
   }
-};*/
+};
 
 Blockly.Blocks['if_color'] = {
   helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',
@@ -602,10 +602,6 @@ Blockly.Blocks['if_color'] = {
 };
 
 Blockly.Blocks['text_compare'] = {
-  /**
-   * Block for comparison operator.
-   * @this Blockly.Block
-   */
   helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',
   init: function() {
     this.setTooltip('Compare deux textes');    
@@ -615,33 +611,7 @@ Blockly.Blocks['text_compare'] = {
     this.appendValueInput('B')
         .appendField(" = ");
     this.setInputsInline(true);
-    // Assign 'this' to a variable for use in the tooltip closure below.
-    /*var thisBlock = this;
-    this.prevBlocks_ = [null, null];*/
   }
-  /**
-   * Called whenever anything on the workspace changes.
-   * Prevent mismatched types from being compared.
-   * @this Blockly.Block
-   */
-  /*onchange: function() {
-    var blockA = this.getInputTargetBlock('A');
-    var blockB = this.getInputTargetBlock('B');
-    // Disconnect blocks that existed prior to this change if they don't match.
-    if (blockA && blockB &&
-        !blockA.outputConnection.checkType_(blockB.outputConnection)) {
-      // Mismatch between two inputs.  Disconnect previous and bump it away.
-      for (var i = 0; i < this.prevBlocks_.length; i++) {
-        var block = this.prevBlocks_[i];
-        if (block === blockA || block === blockB) {
-          block.setParent(null);
-          block.bumpNeighbours_();
-        }
-      }
-    }
-    this.prevBlocks_[0] = blockA;
-    this.prevBlocks_[1] = blockB;
-  }*/
 };
 
 Blockly.Blocks['EtatRobot'] = {  
