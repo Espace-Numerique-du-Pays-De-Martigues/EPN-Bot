@@ -422,9 +422,11 @@ Blockly.Blocks['if_inter_bot'] = {
   }
 };*/
 
-/*Blockly.Blocks['if_color_ligne'] = {
+Blockly.Blocks['if_color_ligne'] = 
+{
   helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',
-  init: function() {
+  init: function() 
+  {
     this.setColour(210);
     this.appendValueInput('IF0')
         .appendField("Si couleur suiveur de ligne détecté")
@@ -441,15 +443,23 @@ Blockly.Blocks['if_inter_bot'] = {
     this.setMutator(new Blockly.Mutator(['controls_if_elseif',
                                          'controls_if_else']));
     // Assign 'this' to a variable for use in the tooltip closure below.
-    var thisBlock = this;
-    this.setTooltip(function() {
-      if (!thisBlock.elseifCount_ && !thisBlock.elseCount_) {
+    /*var thisBlock = this;
+    this.setTooltip(function() 
+    {
+      if (!thisBlock.elseifCount_ && !thisBlock.elseCount_) 
+      {
         return 'CONTROLS_IF_TOOLTIP_1';
-      } else if (!thisBlock.elseifCount_ && thisBlock.elseCount_) {
+      } 
+      else if (!thisBlock.elseifCount_ && thisBlock.elseCount_) 
+      {
         return 'CONTROLS_IF_TOOLTIP_2';
-      } else if (thisBlock.elseifCount_ && !thisBlock.elseCount_) {
+      } 
+      else if (thisBlock.elseifCount_ && !thisBlock.elseCount_) 
+      {
         return 'CONTROLS_IF_TOOLTIP_3';
-      } else if (thisBlock.elseifCount_ && thisBlock.elseCount_) {
+      } 
+      else if (thisBlock.elseifCount_ && thisBlock.elseCount_) 
+      {
         return 'CONTROLS_IF_TOOLTIP_4';
       }
       return '';
@@ -457,67 +467,82 @@ Blockly.Blocks['if_inter_bot'] = {
     this.elseifCount_ = 0;
     this.elseCount_ = 0;
   },
-  mutationToDom: function() {
-    if (!this.elseifCount_ && !this.elseCount_) {
+  mutationToDom: function() 
+  {
+    if (!this.elseifCount_ && !this.elseCount_) 
+    {
       return null;
     }
     var container = document.createElement('mutation');
-    if (this.elseifCount_) {
+    if (this.elseifCount_) 
+    {
       container.setAttribute('elseif', this.elseifCount_);
     }
-    if (this.elseCount_) {
+    if (this.elseCount_) 
+    {
       container.setAttribute('else', 1);
     }
     return container;
   },
-  domToMutation: function(xmlElement) {
+  domToMutation: function(xmlElement) 
+  {
     this.elseifCount_ = parseInt(xmlElement.getAttribute('elseif'), 10) || 0;
     this.elseCount_ = parseInt(xmlElement.getAttribute('else'), 10) || 0;
-    for (var i = 1; i <= this.elseifCount_; i++) {
+    for (var i = 1; i <= this.elseifCount_; i++) 
+    {
       this.appendValueInput('IF' + i)
           .setCheck('Boolean')
           .appendField('ELSEIF');
       this.appendStatementInput('DO' + i)
           .appendField('MSG_THEN');
     }
-    if (this.elseCount_) {
+    if (this.elseCount_) 
+    {
       this.appendStatementInput('ELSE')
           .appendField('MSG_ELSE');
     }
   },
-  decompose: function(workspace) {
+  decompose: function(workspace) 
+  {
     var containerBlock = Blockly.Block.obtain(workspace, 'controls_if_if');
     containerBlock.initSvg();
     var connection = containerBlock.getInput('STACK').connection;
-    for (var i = 1; i <= this.elseifCount_; i++) {
+    for (var i = 1; i <= this.elseifCount_; i++) 
+    {
       var elseifBlock = Blockly.Block.obtain(workspace, 'controls_if_elseif');
       elseifBlock.initSvg();
       connection.connect(elseifBlock.previousConnection);
       connection = elseifBlock.nextConnection;
     }
-    if (this.elseCount_) {
+    if (this.elseCount_) 
+    {
       var elseBlock = Blockly.Block.obtain(workspace, 'controls_if_else');
       elseBlock.initSvg();
       connection.connect(elseBlock.previousConnection);
     }
     return containerBlock;
   },
-  compose: function(containerBlock) {
+  compose: function(containerBlock) 
+  {
     // Disconnect the else input blocks and remove the inputs.
-    if (this.elseCount_) {
+    if (this.elseCount_) 
+    {
       this.removeInput('ELSE');
     }
     this.elseCount_ = 0;
     // Disconnect all the elseif input blocks and remove the inputs.
-    for (var i = this.elseifCount_; i > 0; i--) {
+    for (var i = this.elseifCount_; i > 0; i--) 
+    {
       this.removeInput('IF' + i);
       this.removeInput('DO' + i);
     }
     this.elseifCount_ = 0;
     // Rebuild the block's optional inputs.
     var clauseBlock = containerBlock.getInputTargetBlock('STACK');
-    while (clauseBlock) {
-      switch (clauseBlock.type) {
+    while (clauseBlock) 
+    {
+      switch (clauseBlock.type) 
+      {
         case 'controls_if_elseif':
           this.elseifCount_++;
           var ifInput = this.appendValueInput('IF' + this.elseifCount_)
@@ -526,10 +551,12 @@ Blockly.Blocks['if_inter_bot'] = {
           var doInput = this.appendStatementInput('DO' + this.elseifCount_);
           doInput.appendField('MSG_THEN');
           // Reconnect any child blocks.
-          if (clauseBlock.valueConnection_) {
+          if (clauseBlock.valueConnection_) 
+          {
             ifInput.connection.connect(clauseBlock.valueConnection_);
           }
-          if (clauseBlock.statementConnection_) {
+          if (clauseBlock.statementConnection_) 
+          {
             doInput.connection.connect(clauseBlock.statementConnection_);
           }
           break;
@@ -538,7 +565,8 @@ Blockly.Blocks['if_inter_bot'] = {
           var elseInput = this.appendStatementInput('ELSE');
           elseInput.appendField('MSG_ELSE');
           // Reconnect any child blocks.
-          if (clauseBlock.statementConnection_) {
+          if (clauseBlock.statementConnection_) 
+          {
             elseInput.connection.connect(clauseBlock.statementConnection_);
           }
           break;
@@ -549,11 +577,14 @@ Blockly.Blocks['if_inter_bot'] = {
           clauseBlock.nextConnection.targetBlock();
     }
   },
-  saveConnections: function(containerBlock) {
+  saveConnections: function(containerBlock) 
+  {
     var clauseBlock = containerBlock.getInputTargetBlock('STACK');
     var i = 1;
-    while (clauseBlock) {
-      switch (clauseBlock.type) {
+    while (clauseBlock) 
+    {
+      switch (clauseBlock.type) 
+      {
         case 'controls_if_elseif':
           var inputIf = this.getInput('IF' + i);
           var inputDo = this.getInput('DO' + i);
@@ -572,10 +603,10 @@ Blockly.Blocks['if_inter_bot'] = {
           throw 'Unknown block type.';
       }
       clauseBlock = clauseBlock.nextConnection &&
-          clauseBlock.nextConnection.targetBlock();
-    }
+      clauseBlock.nextConnection.targetBlock();
+    }*/
   }
-};*/
+};
 
 Blockly.Blocks['if_color'] = {
   helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',
