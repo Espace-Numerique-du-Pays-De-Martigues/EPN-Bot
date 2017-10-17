@@ -402,7 +402,7 @@ Blockly.Blocks['if_inter_bot'] = {
   }
 };
 
-/*Blockly.Blocks['if_color_ligne'] = {
+Blockly.Blocks['if_color_ligne'] = {
   helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',
   init: function() {
     this.setPreviousStatement(true, null);
@@ -420,9 +420,9 @@ Blockly.Blocks['if_inter_bot'] = {
         .appendField("alors");
     this.setTooltip('');
   }
-};*/
+};
 
-Blockly.Blocks['if_color_ligne'] = 
+/*Blockly.Blocks['if_color_ligne'] = 
 {
   helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',
   init: function() 
@@ -438,7 +438,7 @@ Blockly.Blocks['if_color_ligne'] =
     this.setNextStatement(true);
     this.setMutator(new Blockly.Mutator(['controls_if_elseif',
                                          'controls_if_else']));
-    /*this.appendValueInput('IF0')
+    this.appendValueInput('IF0')
     
     //this.appendDummyInput()
         .appendField("Si couleur suiveur de ligne détecté")
@@ -453,7 +453,7 @@ Blockly.Blocks['if_color_ligne'] =
     this.setNextStatement(true, null);
     
     this.setMutator(new Blockly.Mutator(['controls_if_elseif',
-                                         'controls_if_else']));*/
+                                         'controls_if_else']));
     // Assign 'this' to a variable for use in the tooltip closure below.
     var thisBlock = this;
     this.setTooltip(function() 
@@ -619,7 +619,7 @@ Blockly.Blocks['if_color_ligne'] =
       clauseBlock.nextConnection.targetBlock();
     }
   }
-};
+};*/
 
 Blockly.Blocks['if_color'] = {
   helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',
