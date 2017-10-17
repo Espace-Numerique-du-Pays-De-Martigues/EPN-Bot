@@ -579,7 +579,7 @@ Blockly.Blocks['if_color_ligne'] =
       clauseBlock = clauseBlock.nextConnection &&
       clauseBlock.nextConnection.targetBlock();
     }
-  },/*
+  },
   saveConnections: function(containerBlock) 
   {
     var clauseBlock = containerBlock.getInputTargetBlock('STACK');
@@ -608,7 +608,7 @@ Blockly.Blocks['if_color_ligne'] =
       clauseBlock = clauseBlock.nextConnection &&
       clauseBlock.nextConnection.targetBlock();
     }
-  }*/
+  }
 };
 
 Blockly.Blocks['if_color'] = {
