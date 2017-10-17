@@ -572,8 +572,8 @@ Blockly.Blocks['if_color_ligne'] =
             elseInput.connection.connect(clauseBlock.statementConnection_);
           }
           break;
-        default:
-          throw 'Unknown block type.';
+        /*default:
+          throw 'Unknown block type.';*/
       }/*
       clauseBlock = clauseBlock.nextConnection &&
       clauseBlock.nextConnection.targetBlock();*/
