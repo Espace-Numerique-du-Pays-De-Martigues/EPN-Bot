@@ -524,7 +524,7 @@ Blockly.Blocks['if_color_ligne'] =
     }
     return containerBlock;
   },
-  compose: function(containerBlock) 
+  /*compose: function(containerBlock) 
   {
     // Disconnect the else input blocks and remove the inputs.
     if (this.elseCount_) 
@@ -578,7 +578,7 @@ Blockly.Blocks['if_color_ligne'] =
       clauseBlock = clauseBlock.nextConnection &&
           clauseBlock.nextConnection.targetBlock();
     }
-  },/*
+  },
   saveConnections: function(containerBlock) 
   {
     var clauseBlock = containerBlock.getInputTargetBlock('STACK');
