@@ -504,7 +504,7 @@ Blockly.Blocks['if_color_ligne'] =
           .appendField('MSG_ELSE');
     }
   },
-  /*decompose: function(workspace) 
+  decompose: function(workspace) 
   {
     var containerBlock = Blockly.Block.obtain(workspace, 'controls_if_if');
     containerBlock.initSvg();
@@ -578,7 +578,7 @@ Blockly.Blocks['if_color_ligne'] =
       clauseBlock = clauseBlock.nextConnection &&
           clauseBlock.nextConnection.targetBlock();
     }
-  },
+  },/*
   saveConnections: function(containerBlock) 
   {
     var clauseBlock = containerBlock.getInputTargetBlock('STACK');
