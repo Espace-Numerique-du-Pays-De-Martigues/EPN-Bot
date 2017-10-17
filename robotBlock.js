@@ -563,17 +563,17 @@ Blockly.Blocks['if_color_ligne'] =
           }
           break;
         case 'controls_if_else':
-          this.elseCount_++;
+          /*this.elseCount_++;
           var elseInput = this.appendStatementInput('ELSE');
           elseInput.appendField('MSG_ELSE');
           // Reconnect any child blocks.
           if (clauseBlock.statementConnection_) 
           {
             elseInput.connection.connect(clauseBlock.statementConnection_);
-          }
+          }*/
           break;
-        /*default:
-          throw 'Unknown block type.';*/
+        default:
+          /*throw 'Unknown block type.';*/
       }/*
       clauseBlock = clauseBlock.nextConnection &&
       clauseBlock.nextConnection.targetBlock();*/
