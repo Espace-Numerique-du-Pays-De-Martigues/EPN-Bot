@@ -745,8 +745,12 @@ Blockly.Blocks['CouleurLigne'] = {
       "nextStatement": null
     });*/
     this.appendDummyInput()
-        .appendField("Couleur Ligne");
-    this.setOutput(true, 'Number');
+        .appendField("couleur suiveur de ligne détecté")
+        .appendField(new Blockly.FieldDropdown([["BLANC", "100"],                                                 
+                                              ["GRIS", "135"],                                                 
+                                              ["NOIR", "170"]]),                                                     
+                                              "Couleur_ligne"); 
+    this.setOutput(true, 'BOOLEAN');
     this.setColour(0);
     this.setTooltip('Retourne la couleur de la ligne (suiveur de ligne)');
    }
