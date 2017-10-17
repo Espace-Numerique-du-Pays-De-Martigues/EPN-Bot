@@ -750,7 +750,7 @@ Blockly.Blocks['CouleurLigne'] = {
                                               ["GRIS", "135"],                                                 
                                               ["NOIR", "170"]]),                                                     
                                               "Couleur_ligne"); 
-    this.setOutput(true, 'BOOLEAN');
+    this.setOutput(true, 'Boolean');
     this.setColour(0);
     this.setTooltip('Retourne la couleur de la ligne (suiveur de ligne)');
    }
