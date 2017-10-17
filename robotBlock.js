@@ -428,9 +428,19 @@ Blockly.Blocks['if_color_ligne'] =
   init: function() 
   {
     this.setColour(210);
-    //this.appendValueInput('IF0')
     
-    this.appendDummyInput()
+    this.appendValueInput('IF0')
+        .setCheck('Boolean')
+        .appendField("IF");
+    this.appendStatementInput('DO0')
+        .appendField("Faire");
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setMutator(new Blockly.Mutator(['controls_if_elseif',
+                                         'controls_if_else']));
+    /*this.appendValueInput('IF0')
+    
+    //this.appendDummyInput()
         .appendField("Si couleur suiveur de ligne détecté")
         .appendField(new Blockly.FieldDropdown([["BLANC", "100"],                                                 
                                               ["GRIS", "135"],                                                 
@@ -443,7 +453,7 @@ Blockly.Blocks['if_color_ligne'] =
     this.setNextStatement(true, null);
     
     this.setMutator(new Blockly.Mutator(['controls_if_elseif',
-                                         'controls_if_else']));
+                                         'controls_if_else']));*/
     // Assign 'this' to a variable for use in the tooltip closure below.
     var thisBlock = this;
     this.setTooltip(function() 
