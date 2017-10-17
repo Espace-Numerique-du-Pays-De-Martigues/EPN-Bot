@@ -445,7 +445,7 @@ Blockly.Blocks['if_color_ligne'] =
     this.setMutator(new Blockly.Mutator(['controls_if_elseif',
                                          'controls_if_else']));
     // Assign 'this' to a variable for use in the tooltip closure below.
-    /*var thisBlock = this;
+    var thisBlock = this;
     this.setTooltip(function() 
     {
       if (!thisBlock.elseifCount_ && !thisBlock.elseCount_) 
@@ -465,7 +465,7 @@ Blockly.Blocks['if_color_ligne'] =
         return 'CONTROLS_IF_TOOLTIP_4';
       }
       return '';
-    });
+    });/*
     this.elseifCount_ = 0;
     this.elseCount_ = 0;
   },
