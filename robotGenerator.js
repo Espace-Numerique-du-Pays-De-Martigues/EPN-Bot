@@ -212,6 +212,27 @@ Blockly.Arduino['if_inter_bot'] = function(block) {
   return code;
 };
 
+Blockly.Arduino['if_color_ligne'] = function() {
+  // If/elseif/else condition.
+  var n = 0;
+  var argument = Blockly.Arduino.valueToCode(this, 'Couleur_ligne' + n,
+      Blockly.Arduino.ORDER_NONE) || 'false';
+  var branch = Blockly.Arduino.statementToCode(this, 'DO' + n);
+  var code = 'if (' + argument + ') {\n' + branch + '\n}';
+  for (n = 1; n <= this.elseifCount_; n++) 
+  {
+    argument = Blockly.Arduino.valueToCode(this, 'Couleur_ligne' + n,
+      Blockly.Arduino.ORDER_NONE) || 'false';
+    branch = Blockly.Arduino.statementToCode(this, 'DO' + n);
+    code += ' else if (' + argument + ') {\n' + branch + '}';
+  }
+  if (this.elseCount_) 
+  {
+    branch = Blockly.Arduino.statementToCode(this, 'ELSE');
+    code += ' else {\n' + branch + '\n}';
+  }
+  return code + '\n';
+};
 /*Blockly.Arduino['if_color_ligne'] = function(block) {
   Blockly.Arduino.setups_["setup_epnbot"] = setup_epnbot;
   Blockly.Arduino.definitions_["define_epnbot"] = define_epnbot;
