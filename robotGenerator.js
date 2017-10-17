@@ -324,7 +324,7 @@ Blockly.Arduino ['CouleurZone'] = function (block)  {
   return [ code,  Blockly.Arduino.ORDER_ATOMIC ];
 };
 
-Blockly.Arduino ['CouleurLigne'] = function (block)  {
+/*Blockly.Arduino ['CouleurLigne'] = function (block)  {
  
   var dropdown_option = block.getFieldValue('Couleur_ligne');
   if(dropdown_option==100) //blanc
@@ -340,6 +340,6 @@ Blockly.Arduino ['CouleurLigne'] = function (block)  {
       var code = 'EpnBot.Getsuiveurligne() > ' + dropdown_option';
   }
   return code;
-  /*var code  ="EpnBot.Getsuiveurligne()";
-  return [ code,  Blockly.Arduino.ORDER_ATOMIC ];*/
-};
+  ///var code  ="EpnBot.Getsuiveurligne()";
+  //return [ code,  Blockly.Arduino.ORDER_ATOMIC ];
+};*/
