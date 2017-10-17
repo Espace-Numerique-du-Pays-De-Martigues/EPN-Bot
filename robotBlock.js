@@ -422,7 +422,7 @@ Blockly.Blocks['if_inter_bot'] = {
   }
 };*/
 
-Blockly.Blocks['if_color_ligne'] = {
+/*Blockly.Blocks['if_color_ligne'] = {
   helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',
   init: function() {
     this.setColour(210);
@@ -575,7 +575,7 @@ Blockly.Blocks['if_color_ligne'] = {
           clauseBlock.nextConnection.targetBlock();
     }
   }
-};
+};*/
 
 Blockly.Blocks['if_color'] = {
   helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',
@@ -706,50 +706,4 @@ Blockly.Blocks['CouleurLigne'] = {
     this.setColour(0);
     this.setTooltip('Retourne la couleur de la ligne (suiveur de ligne)');
    }
-};
-
-Blockly.Blocks['controls_if_if'] = {
-  /**
-   * Mutator block for if container.
-   * @this Blockly.Block
-   */
-  init: function() {
-    this.setColour(Blockly.Blocks.logic.HUE);
-    this.appendDummyInput()
-        .appendField(Blockly.Msg.CONTROLS_IF_IF_TITLE_IF);
-    this.appendStatementInput('STACK');
-    this.setTooltip(Blockly.Msg.CONTROLS_IF_IF_TOOLTIP);
-    this.contextMenu = false;
-  }
-};
-
-Blockly.Blocks['controls_if_elseif'] = {
-  /**
-   * Mutator bolck for else-if condition.
-   * @this Blockly.Block
-   */
-  init: function() {
-    this.setColour(Blockly.Blocks.logic.HUE);
-    this.appendDummyInput()
-        .appendField(Blockly.Msg.CONTROLS_IF_ELSEIF_TITLE_ELSEIF);
-    this.setPreviousStatement(true);
-    this.setNextStatement(true);
-    this.setTooltip(Blockly.Msg.CONTROLS_IF_ELSEIF_TOOLTIP);
-    this.contextMenu = false;
-  }
-};
-
-Blockly.Blocks['controls_if_else'] = {
-  /**
-   * Mutator block for else condition.
-   * @this Blockly.Block
-   */
-  init: function() {
-    this.setColour(Blockly.Blocks.logic.HUE);
-    this.appendDummyInput()
-        .appendField(Blockly.Msg.CONTROLS_IF_ELSE_TITLE_ELSE);
-    this.setPreviousStatement(true);
-    this.setTooltip(Blockly.Msg.CONTROLS_IF_ELSE_TOOLTIP);
-    this.contextMenu = false;
-  }
 };
