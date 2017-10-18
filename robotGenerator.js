@@ -38,7 +38,7 @@ var define_epnbot = //'#include <Servo.h>\n'+
 Blockly.Arduino ['Avancer'] = function (block)  {
   Blockly.Arduino.setups_["setup_epnbot"] = setup_epnbot;
   Blockly.Arduino.definitions_["define_epnbot"] = define_epnbot;
-  var code  ="EpnBot.Avancer();\n";
+  var code  ="EpnBot.Avancer(100);\n";
   return  code;
 };
 
