@@ -266,7 +266,7 @@ Blockly.Arduino['if_color'] = function(block) {
   Blockly.Arduino.definitions_["define_epnbot"] = define_epnbot;
   var couleur = Blockly.Arduino.valueToCode(block, 'Couleur', Blockly.Arduino.ORDER_ATOMIC)||'VERT';
   var statements_faire = Blockly.Arduino.statementToCode(block, 'Faire');
-  var code = 'if (strcmp(EpnBot.getColorZone(),\"' + couleur + '\")==0)\n{\n' +
+  var code = 'if (strcmp(EpnBot.Getcolorzone(),\"' + couleur + '\")==0)\n{\n' +
                     statements_faire + '}\n';
   return code;
 };
@@ -320,7 +320,7 @@ Blockly.Arduino ['DistanceObstacle'] = function (block)  {
 };
 
 Blockly.Arduino ['CouleurZone'] = function (block)  {
-  var code  ="EpnBot.getGetcolorzone()";
+  var code  ="EpnBot.Getcolorzone()";
   return [ code,  Blockly.Arduino.ORDER_ATOMIC ];
 };
 
