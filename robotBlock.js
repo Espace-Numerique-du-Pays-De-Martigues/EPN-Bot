@@ -430,9 +430,9 @@ Blockly.Blocks['if_color_ligne'] = {
     this.setColour(210);
     this.appendDummyInput()
         .appendField("Si couleur suiveur de ligne détecté")
-        .appendField(new Blockly.FieldDropdown([["BLANC", "180"],                                                 
-                                              ["GRIS", "200"],                                                 
-                                              ["NOIR", "220"]]),                                                     
+        .appendField(new Blockly.FieldDropdown([["BLANC", "100"],                                                 
+                                              ["GRIS", "135"],                                                 
+                                              ["NOIR", "170"]]),                                                     
                                               "Couleur_ligne"); 
     this.setInputsInline(true);
     this.appendStatementInput("Faire")
@@ -766,9 +766,9 @@ Blockly.Blocks['CouleurLigne'] = {
     });*/
     this.appendDummyInput()
         .appendField("couleur suiveur de ligne détecté")
-        .appendField(new Blockly.FieldDropdown([["BLANC", "180"],                                                 
-                                              ["GRIS", "200"],                                                 
-                                              ["NOIR", "220"]]),                                                     
+        .appendField(new Blockly.FieldDropdown([["BLANC", "100"],                                                 
+                                              ["GRIS", "135"],                                                 
+                                              ["NOIR", "170"]]),                                                     
                                               "Couleur_ligne"); 
     this.setOutput(true, 'Boolean');
     this.setColour(0);
