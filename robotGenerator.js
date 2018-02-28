@@ -2,11 +2,13 @@ goog.provide('Blockly.Arduino.Robotdulab');
 goog.require('Blockly.Arduino');
 
 
-var setup_epnbot = "EpnBot.begin();\n";
+var setup_epnbot = 'EpnBot.begin();\n'+
+                   'irrecv.enableIRIn();';
 
 var define_epnbot = //'#include <Servo.h>\n'+
  // '#include <Adafruit_NeoPixel.h>\n'+
   '#include "EPNBot.h"\n'+
+  '#include "IRremote.h"\n'+
   '#define TRIGGER_PIN 12 // broche trig du capteur US HC-SR04\n'+
   '#define ECHO_PIN 4 // broche echo du capteur US HC-SR04\n'+
   '#define ROUE_DROITE_PIN 11\n'+
@@ -16,10 +18,12 @@ var define_epnbot = //'#include <Servo.h>\n'+
   '#define RELAI_ALIM_MOTEUR 2 // broche du relai alimentation des moteurs\n'+
   '#define INTER_BOT 13 // interrupteur robot\n'+
   '#define GRAYSCALE_SENSOR 0 // broche analogique du capteur de gris\n'+
-    
+  '#define RECV_PIN 9 // recepteur télécommande\n'+     
   '\n'+
     
   'int etat_robot=0;\n'+
+  'IRrecv irrecv(RECV_PIN);\n'+      
+  'decode_results results;\n'+ 
 
   '\n'+
     
