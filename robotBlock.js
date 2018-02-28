@@ -405,6 +405,23 @@ Blockly.Blocks['if_inter_bot'] = {
   }
 };
 
+Blockly.Blocks['if_telecommande'] = {
+  helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',
+  init: function() {
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.appendDummyInput()
+        .appendField('Si on utilise la télécommande');
+    //this.setOutput(true, 'Boolean');
+   this.setInputsInline(true);
+    this.appendStatementInput("Faire")
+        .setCheck(null)
+        .appendField("alors");
+    this.setTooltip('Permet de choisir lancer la détection des touches de la télécommande');
+    this.setColour(210);
+  }
+};
+
 Blockly.Blocks['if_color_ligne'] = {
   helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',
   init: function() {
@@ -757,4 +774,43 @@ Blockly.Blocks['CouleurLigne'] = {
     this.setColour(0);
     this.setTooltip('Retourne la couleur de la ligne (suiveur de ligne)');
    }
+};
+
+Blockly.Blocks['if_touche_telecommande'] = {
+  helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',
+  init: function() {
+    /*this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);*/
+    this.appendDummyInput()
+        .appendField('Si touche de la telecommande appuyé')
+        .appendField(new Blockly.FieldDropdown([["On/Off", "0xFD00FF"], 
+                                                ["Vol+", "0xFD807F"], 
+                                                ["Vol-", "0xFD906F"], 
+                                                ["Précédent", "0xFD20DF"], 
+                                                ["Suivant", "0xFD609F"], 
+                                                ["Func/Stop", "0xFD40BF"], 
+                                                ["Play/Pause", "0xFDA05F"], 
+                                                ["Haut", "0xFD50AF"], 
+                                                ["Bas", "0xFD10EF"], 
+                                                ["Eq", "0xFDB04F"], 
+                                                ["St/rept", "0xFD708F"], 
+                                                ["0", "0xFD30CF"], 
+                                                ["1", "0xFD08F7"], 
+                                                ["2", "0xFD8877"], 
+                                                ["3", "0xFD48B7"],  
+                                                ["4", "0xFD28D7"], 
+                                                ["5", "0xFDA857"], 
+                                                ["6", "0xFD6897"], 
+                                                ["7", "0xFD18E7"],
+                                                ["8", "0xFD9867"],
+                                                ["9", "0xFD58A7"]]), 
+                                                    "id_telecommande"); 
+    this.setOutput(true, 'Boolean');
+   /*this.setInputsInline(true);
+    this.appendStatementInput("Faire")
+        .setCheck(null)
+        .appendField("alors");*/
+    this.setTooltip('Permet de choisir la touche de la télécommande');
+    this.setColour(0);
+  }
 };
