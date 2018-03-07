@@ -262,7 +262,7 @@ Blockly.Arduino['if_color_ligne'] = function(block) {
   //var code  = "EpnBot.Avancer("+dropdown_option+");\n";
   //var couleur = Blockly.Arduino.valueToCode(block, 'Couleur', Blockly.Arduino.ORDER_ATOMIC)||'VERT';
   var statements_faire = Blockly.Arduino.statementToCode(block, 'Faire');
-  if(dropdown_option==100) //blanc
+  /*if(dropdown_option==100) //blanc
   {
       var code = 'if (EpnBot.Getsuiveurligne()<' + dropdown_option + ')\n{\n' +
               statements_faire + '} \n';
@@ -275,6 +275,21 @@ Blockly.Arduino['if_color_ligne'] = function(block) {
   else if(dropdown_option==170)   //noir (corrige à droite)
   {
       var code = 'if (EpnBot.Getsuiveurligne()>' + dropdown_option + ')\n{\n' +
+              statements_faire + '} \n';
+  }*/
+  if(dropdown_option==100) //blanc
+  {
+      var code = 'if (EpnBot.Getsuiveurligne()<' + dropdown_option + ')\n{\n' +
+              statements_faire + '} \n';
+  }
+  else if(dropdown_option==135)   //gris (corrige à gauche)
+  {
+      var code = 'if ((EpnBot.Getsuiveurligne()>=' + (dropdown_option-35) + ')&&(EpnBot.Getsuiveurligne()<=' + dropdown_option + '))\n{\n' +
+              statements_faire + '} \n';
+  }
+  else if(dropdown_option==170)   //noir (corrige à droite)
+  {
+      var code = 'if (EpnBot.Getsuiveurligne()>' + (dropdown_option-35) + ')\n{\n' +
               statements_faire + '} \n';
   }
 
@@ -347,7 +362,7 @@ Blockly.Arduino ['CouleurZone'] = function (block)  {
 Blockly.Arduino ['CouleurLigne'] = function (block)  {
  
   var dropdown_option = block.getFieldValue('Couleur_ligne');
-  if(dropdown_option==100) //blanc
+  /*if(dropdown_option==100) //blanc
   {
       var code = 'EpnBot.Getsuiveurligne() < ' + dropdown_option;
   }
@@ -358,6 +373,21 @@ Blockly.Arduino ['CouleurLigne'] = function (block)  {
   else if(dropdown_option==170)   //noir (corrige à droite)
   {
       var code = 'EpnBot.Getsuiveurligne() > ' + dropdown_option;
+  }*/
+  if(dropdown_option==100) //blanc
+  {
+      var code = 'if (EpnBot.Getsuiveurligne()<' + dropdown_option + ')\n{\n' +
+              statements_faire + '} \n';
+  }
+  else if(dropdown_option==135)   //gris (corrige à gauche)
+  {
+      var code = 'if ((EpnBot.Getsuiveurligne()>=' + (dropdown_option-35) + ')&&(EpnBot.Getsuiveurligne()<=' + dropdown_option + '))\n{\n' +
+              statements_faire + '} \n';
+  }
+  else if(dropdown_option==170)   //noir (corrige à droite)
+  {
+      var code = 'if (EpnBot.Getsuiveurligne()>' + (dropdown_option-35) + ')\n{\n' +
+              statements_faire + '} \n';
   }
   return [ code,  Blockly.Arduino.ORDER_ATOMIC ];
   //return code;
