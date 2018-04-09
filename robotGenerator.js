@@ -428,7 +428,7 @@ for (n = 1; n <= this.elseifCount_; n++) {
 argument = Blockly.Arduino.valueToCode(this, 'IF' + n,
 Blockly.Arduino.ORDER_NONE) || 'false';
 branch = Blockly.Arduino.statementToCode(this, 'DO' + n);
-code += ' else if (' + argument + ') {\n' + branch + '}';
+code += ' else if (results.value == ' + argument + ') {\n' + branch + '}';
 }
 if (this.elseCount_) {
 branch = Blockly.Arduino.statementToCode(this, 'ELSE');
