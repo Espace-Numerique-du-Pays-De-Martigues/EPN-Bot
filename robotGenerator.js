@@ -432,7 +432,7 @@ Blockly.Arduino.ORDER_NONE) || 'false';
 var branch = Blockly.Arduino.statementToCode(this, 'DO' + n);
 var code = 'if (irrecv.decode(&results))\n'+
 '{\n'+
-' if (results.value == ' + argument + ')\n {\n' + branch + '\n }';
+' if (results.value == ' + argument + ')\n {\n' + branch + '}';
 for (n = 1; n <= this.elseifCount_; n++) {
 argument = Blockly.Arduino.valueToCode(this, 'IF' + n,
 Blockly.Arduino.ORDER_NONE) || 'false';
@@ -456,12 +456,12 @@ var code = 'while(mySerial.available())\n'+
 '{\n'+
 'resultat=(char)mySerial.read();\n'+
 'resultat=resultat-48;\n'+
-' if (resultat == ' + argument + ')\n {\n' + branch + '\n }';
+' if (resultat == ' + argument + ')\n {\n' + branch + '}';
 for (n = 1; n <= this.elseifCount_; n++) {
 argument = Blockly.Arduino.valueToCode(this, 'IF' + n,
 Blockly.Arduino.ORDER_NONE) || 'false';
 branch = Blockly.Arduino.statementToCode(this, 'DO' + n);
-code += ' \nelse if (resultat == ' + argument + ') \n{\n' + branch + '}';
+code += '\nelse if (resultat == ' + argument + ') \n{\n' + branch + '}';
 }
 if (this.elseCount_) {
 branch = Blockly.Arduino.statementToCode(this, 'ELSE');
