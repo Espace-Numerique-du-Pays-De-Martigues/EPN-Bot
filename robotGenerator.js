@@ -433,11 +433,11 @@ for (n = 1; n <= this.elseifCount_; n++) {
 argument = Blockly.Arduino.valueToCode(this, 'IF' + n,
 Blockly.Arduino.ORDER_NONE) || 'false';
 branch = Blockly.Arduino.statementToCode(this, 'DO' + n);
-code += ' else if (results.value == ' + argument + ') \n{\n' + branch + '}';
+code += ' \nelse if (results.value == ' + argument + ') \n{\n' + branch + '}';
 }
 if (this.elseCount_) {
 branch = Blockly.Arduino.statementToCode(this, 'ELSE');
-code += ' else \n{\n' + branch + '\n}';
+code += ' \nelse \n{\n' + branch + '\n}';
 }
 return code + '\n irrecv.resume();\n}\n';
 };
@@ -457,11 +457,11 @@ for (n = 1; n <= this.elseifCount_; n++) {
 argument = Blockly.Arduino.valueToCode(this, 'IF' + n,
 Blockly.Arduino.ORDER_NONE) || 'false';
 branch = Blockly.Arduino.statementToCode(this, 'DO' + n);
-code += ' else if (resultat == ' + argument + ') \n{\n' + branch + '}';
+code += ' \nelse if (resultat == ' + argument + ') \n{\n' + branch + '}';
 }
 if (this.elseCount_) {
 branch = Blockly.Arduino.statementToCode(this, 'ELSE');
-code += ' else \n{\n' + branch + '\n}';
+code += ' \nelse \n{\n' + branch + '\n}';
 }
 return code + '\n}\n';
 };
