@@ -822,7 +822,7 @@ init: function() {
 this.setNextStatement(true, null);*/
 this.appendDummyInput()
 .appendField("touche bluetooth ")
-.appendField(new Blockly.FieldDropdown([["Gauche", "1"],
+.appendField(new Blockly.FieldDropdown([["Gauche", "gauche"],
 ["Haut", "haut"],
 ["Droite", "droite"],
 ["Bas", "bas"],
