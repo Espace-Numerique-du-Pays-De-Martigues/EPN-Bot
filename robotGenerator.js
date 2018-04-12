@@ -7,8 +7,7 @@ var setup_epnbot = 'EpnBot.begin();\n'+
                    'pinMode(RXBLU_PIN, INPUT);\n'+
                    'pinMode(TXBLU_PIN, OUTPUT);\n'+
                    'mySerial.begin(9600);\n'+
-                   'mySerial.setTimeout(100);\n'+
-                   'Serial.begin(9600);';
+                   'mySerial.setTimeout(100);';
 
 var define_epnbot =
   '#include "EPNBot.h"\n\n'+
