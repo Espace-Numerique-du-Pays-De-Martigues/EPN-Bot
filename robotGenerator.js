@@ -7,6 +7,7 @@ var setup_epnbot = 'EpnBot.begin();\n'+
                    'pinMode(RXBLU_PIN, INPUT);\n'+
                    'pinMode(TXBLU_PIN, OUTPUT);\n'+
                    'mySerial.begin(9600);\n'+
+                   'mySerial.setTimeout(100);\n'+
                    'Serial.begin(9600);';
 
 var define_epnbot =
@@ -28,10 +29,11 @@ var define_epnbot =
   'int etat_robot=0;\n'+
   'IRrecv irrecv(RECV_PIN);\n'+      
   'decode_results results;\n'+ 
+  'String resultat;\n'+
 
   '\n'+
     
-  'EPNBot EpnBot(TRIGGER_PIN, ECHO_PIN, ROUE_DROITE_PIN, ROUE_GAUCHE_PIN, ANNEAU_LED_PIN, GRAYSCALE_SENSOR, RELAI_ALIM_MOTEUR, INTER_BOT, RECV_PIN, RXBLU_PIN, TXBLU_PIN);\n';
+  'EPNBot EpnBot(TRIGGER_PIN, ECHO_PIN, ROUE_DROITE_PIN, ROUE_GAUCHE_PIN, ANNEAU_LED_PIN, GRAYSCALE_SENSOR, RELAI_ALIM_MOTEUR, INTER_BOT);\n';
   //'RobotDuLAB robotDuLAB(TRIGGER_PIN, ECHO_PIN, ROUE_DROITE_PIN, ROUE_GAUCHE_PIN, ANNEAU_LED_PIN);\n';
 
 /*Blockly.Arduino ['Avancer'] = function (block)  {
@@ -454,8 +456,7 @@ Blockly.Arduino.ORDER_NONE) || 'false';
 var branch = Blockly.Arduino.statementToCode(this, 'DO' + n);
 var code = 'while(mySerial.available())\n'+
 '{\n'+
-'resultat=(char)mySerial.read();\n'+
-'resultat=resultat-48;\n'+
+'resultat=mySerial.readString();\n'+
 ' if (resultat == ' + argument + ')\n {\n' + branch + '}';
 for (n = 1; n <= this.elseifCount_; n++) {
 argument = Blockly.Arduino.valueToCode(this, 'IF' + n,
