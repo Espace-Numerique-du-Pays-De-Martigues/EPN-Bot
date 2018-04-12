@@ -1199,7 +1199,7 @@ init: function() {
 this.setColour(210);
 this.appendValueInput('IF0')
 .setCheck('bluetooth')
-.appendField("Si touche de la télécommande bluetooth appuyé ");
+.appendField("Si touche bluetooth appuyé ");
 this.appendStatementInput('DO0')
 .appendField("Faire");
 //.appendField("test 7");
@@ -1257,7 +1257,7 @@ this.elseCount_ = parseInt(xmlElement.getAttribute('else'), 10) || 0;
 for (var i = 1; i <= this.elseifCount_; i++) {
 this.appendValueInput('IF' + i)
 .setCheck('bluetooth')
-.appendField("Sinon Si touche de la télécommande bluetooth appuyé ");
+.appendField("Sinon Si touche bluetooth appuyé ");
 this.appendStatementInput('DO' + i)
 .appendField("Faire");
 //.appendField("test 13");
@@ -1316,7 +1316,7 @@ case 'controls_if_elseif':
 this.elseifCount_++;
 var ifInput = this.appendValueInput('IF' + this.elseifCount_)
 .setCheck('bluetooth')
-.appendField("Sinon Si touche de la télécommande bluetooth appuyé ");
+.appendField("Sinon Si touche bluetooth appuyé ");
 var doInput = this.appendStatementInput('DO' + this.elseifCount_);
 doInput.appendField("Faire");
 //doInput.appendField("test 16");
