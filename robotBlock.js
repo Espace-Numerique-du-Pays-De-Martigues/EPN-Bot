@@ -823,15 +823,15 @@ this.setNextStatement(true, null);*/
 this.appendDummyInput()
 .appendField("touche bluetooth ")
 .appendField(new Blockly.FieldDropdown([["Gauche", "1"],
-["Haut", "2"],
-["Droite", "3"],
-["Bas", "4"],
-["Select", "5"],
-["Start", "6"],
-["Carré", "7"],
-["Triangle", "8"],
-["Croix", "9"],
-["Rond", "0"]]),
+["Haut", "haut"],
+["Droite", "droite"],
+["Bas", "bas"],
+["Select", "select"],
+["Start", "start"],
+["Carré", "carre"],
+["Triangle", "triangle"],
+["Croix", "croix"],
+["Rond", "rond"]]),
 "id_bluetooth");
 this.setOutput(true, 'bluetooth');
 this.setTooltip('Permet de choisir la touche de la manette bluetooth');
