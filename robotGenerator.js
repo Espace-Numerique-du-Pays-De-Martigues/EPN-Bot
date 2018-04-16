@@ -10,8 +10,8 @@ var setup_epnbot = 'EpnBot.begin();\n'+
                    'mySerial.setTimeout(100);';
 
 var define_epnbot =
-  '#include "EPNBot.h"\n\n'+
-  '#include <SoftwareSerial.h>\n\n'+
+  '#include "EPNBot.h"\n'+
+  '#include <SoftwareSerial.h>\n'+
   '#include <IRremote.h>\n\n'+
   '#define TRIGGER_PIN 12 // broche trig du capteur US HC-SR04\n'+
   '#define ECHO_PIN 4 // broche echo du capteur US HC-SR04\n'+
