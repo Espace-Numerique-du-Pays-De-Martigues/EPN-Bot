@@ -15,12 +15,12 @@ var define_epnbot =
   '#include <IRremote.h>\n\n'+
   '#define TRIGGER_PIN 12 // broche trig du capteur US HC-SR04\n'+
   '#define ECHO_PIN 4 // broche echo du capteur US HC-SR04\n'+
-  '#define ROUE_DROITE_PIN 11\n'+
-  '#define ROUE_GAUCHE_PIN 10\n'+
+  '#define ROUE_DROITE_PIN 8\n'+
+  '#define ROUE_GAUCHE_PIN 7\n'+
   '#define ANNEAU_LED_PIN 6\n'+
-  '#define RXBLU_PIN 5 // Broche 5 en tant que RX, à raccorder sur TX du HC-05\n'+
-  '#define TXBLU_PIN 3 // Broche 3 en tant que TX, à raccorder sur RX du HC-05\n'+
-  '#define RELAI_ALIM_MOTEUR 2 // broche du relai alimentation des moteurs\n'+
+  '#define RXBLU_PIN 11 // Broche 11 en tant que RX, à raccorder sur TX du HC-05\n'+
+  '#define TXBLU_PIN 10 // Broche 10 en tant que TX, à raccorder sur RX du HC-05\n'+
+  '#define RELAI_ALIM_MOTEUR 5 // broche du relai alimentation des moteurs\n'+
   '#define INTER_BOT 13 // interrupteur robot\n'+
   '#define GRAYSCALE_SENSOR 0 // broche analogique du capteur de gris\n'+
   '#define RECV_PIN 9 // recepteur télécommande\n'+  
