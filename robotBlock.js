@@ -1388,7 +1388,7 @@ Blockly.Blocks['controls_if_color'] =
   {
     this.setColour(210);
     this.appendValueInput('IF0')
-    .setCheck('bluetooth')
+    .setCheck('Couleur')
     .appendField("Si couleur détecté ");
     this.appendStatementInput('DO0')
     .appendField("Faire");
@@ -1460,7 +1460,7 @@ Blockly.Blocks['controls_if_color'] =
     for (var i = 1; i <= this.elseifCount_; i++) 
     {
       this.appendValueInput('IF' + i)
-      .setCheck('couleur')
+      .setCheck('Couleur')
       .appendField("Sinon Si couleur détecté ");
       this.appendStatementInput('DO' + i)
       .appendField("Faire");
@@ -1528,7 +1528,7 @@ Blockly.Blocks['controls_if_color'] =
         case 'controls_if_elseif':
           this.elseifCount_++;
           var ifInput = this.appendValueInput('IF' + this.elseifCount_)
-          .setCheck('couleur')
+          .setCheck('Couleur')
           .appendField("Sinon Si couleur détecté ");
           var doInput = this.appendStatementInput('DO' + this.elseifCount_);
           doInput.appendField("Faire");
