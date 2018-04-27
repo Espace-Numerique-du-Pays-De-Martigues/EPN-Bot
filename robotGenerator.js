@@ -497,5 +497,5 @@ Blockly.Arduino['controls_if_color'] = function(block)
             '{\n' + branch + 
             '\n}';
   }
-  return code + '\n}\n';
+  return code;
 };
