@@ -495,7 +495,7 @@ Blockly.Arduino['controls_if_color'] = function(block)
     branch = Blockly.Arduino.statementToCode(this, 'ELSE');
     code += '\nelse\n
             '{\n' + branch + 
-            '\n}';
+            '}';
   }
   return code;
 };
