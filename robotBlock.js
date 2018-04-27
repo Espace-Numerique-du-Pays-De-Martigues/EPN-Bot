@@ -1377,7 +1377,7 @@ clauseBlock.nextConnection.targetBlock();
 }
 };
 
-Blockly.Blocks['controls_if_color_ligne'] = 
+Blockly.Blocks['controls_if_color'] = 
 {
   helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',
   /**
