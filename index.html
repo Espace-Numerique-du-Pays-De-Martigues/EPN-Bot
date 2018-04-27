@@ -455,10 +455,15 @@
               </value>
           </block>
           <block type="if_color"></block>
-          <block type="if_color_ligne"></block>
+          <!--<block type="if_color_ligne"></block>
           <block type="if_inter_bot"></block>
           <!--<block type="if_telecommande"></block>-->
-          <block type="controls_if"></block>
+          <block type="controls_if_color_ligne">
+                <value name="COULEUR_LIGNE">
+                    <block type="VERT">
+                    </block>
+                </value>
+          </block>
           <block type="controls_if_telecommande">
                 <value name="TOUCHE_TELECOMMANDE">
                     <block type="id_touche_telecommande">
@@ -466,7 +471,7 @@
                 </value>
           </block>
           <block type="controls_if_bluetooth">
-                <value name="TOUCHE_TELECOMMANDE">
+                <value name="TOUCHE_BLUETOOTH">
                     <block type="id_touche_bluetooth">
                     </block>
                 </value>
@@ -475,7 +480,8 @@
           <block type="logic_operation"></block>
           <block type="logic_negate"></block>
           <block type="logic_null"></block>
-          <block type="text_compare"></block>
+          <!--<block type="text_compare"></block>-->
+          <block type="controls_if"></block>
         </category>
 
         <category name="Structure de Controle" colour="120">
