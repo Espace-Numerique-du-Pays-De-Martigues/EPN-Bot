@@ -32,6 +32,7 @@ var define_epnbot =
   'decode_results resultat_irremote;\n'+ 
   'String resultat_bluetooth;\n'+
   'char resultat_couleur;\n'+
+  'int resultat_ligne=0\n'+
 
   '\n'+
     
@@ -384,20 +385,17 @@ Blockly.Arduino ['CouleurLigne'] = function (block)  {
   }*/
   if(dropdown_option==100) //blanc
   {
-      var code = 'if (EpnBot.Getsuiveurligne()<' + dropdown_option + ')\n{\n' +
-              statements_faire + '} \n';
+      var code = 'resultat_ligne<' + dropdown_option;
   }
   else if(dropdown_option==135)   //gris (corrige à gauche)
   {
-      var code = 'if ((EpnBot.Getsuiveurligne()>=' + (dropdown_option-35) + ')&&(EpnBot.Getsuiveurligne()<=' + dropdown_option + '))\n{\n' +
-              statements_faire + '} \n';
+      var code = '(resultat_ligne>=' + (dropdown_option-35) + ')&&(resultat_ligne<=' + dropdown_option + ')';
   }
   else if(dropdown_option==170)   //noir (corrige à droite)
   {
-      var code = 'if (EpnBot.Getsuiveurligne()>' + (dropdown_option-35) + ')\n{\n' +
-              statements_faire + '} \n';
+      var code = 'resultat_ligne>' + (dropdown_option-35);
   }
-  return [ code,  Blockly.Arduino.ORDER_ATOMIC ];
+  return [ code ,  Blockly.Arduino.ORDER_ATOMIC ];
   //return code;
   ///var code  ="EpnBot.Getsuiveurligne()";
   //return [ code,  Blockly.Arduino.ORDER_ATOMIC ];
@@ -498,3 +496,30 @@ Blockly.Arduino['controls_if_color'] = function(block)
   return code;
 };
 
+Blockly.Arduino['controls_if_ligne'] = function(block) 
+{
+  // If/elseif/else condition.
+  var n = 0;
+  var argument = Blockly.Arduino.valueToCode(this, 'IF' + n, Blockly.Arduino.ORDER_NONE) || 'false';
+  var branch = Blockly.Arduino.statementToCode(this, 'DO' + n);
+  var code =  'resultat_ligne=EpnBot.Getsuiveurligne()\n'+
+              'if ('+ argument +')\n'+
+              '{\n' + branch + 
+              '}';
+  for (n = 1; n <= this.elseifCount_; n++) 
+  {
+    argument = Blockly.Arduino.valueToCode(this, 'IF' + n, Blockly.Arduino.ORDER_NONE) || 'false';
+    branch = Blockly.Arduino.statementToCode(this, 'DO' + n);
+    code += '\nelse if (' + argument + ')\n'+
+            '{\n' + branch + 
+            '}';
+  }
+  if (this.elseCount_) 
+  {
+    branch = Blockly.Arduino.statementToCode(this, 'ELSE');
+    code += '\nelse\n'+
+            '{\n' + branch + 
+            '}';
+  }
+  return code;
+};
