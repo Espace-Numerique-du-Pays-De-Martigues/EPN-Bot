@@ -32,7 +32,7 @@ var define_epnbot =
   'decode_results resultat_irremote;\n'+ 
   'String resultat_bluetooth;\n'+
   'char resultat_couleur;\n'+
-  'int resultat_ligne=0\n'+
+  'int resultat_ligne=0;\n'+
 
   '\n'+
     
