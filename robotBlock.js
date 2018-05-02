@@ -845,7 +845,7 @@ this.setColour(0);
 
 
 
-/*
+
 Blockly.Blocks['controls_if_if'] = {
 //
 // Mutator block for if container.
@@ -1083,8 +1083,8 @@ this.setTooltip("Ajouter une condition finale fourre-tout au bloc Si.");
 this.contextMenu = false;
 }
 };
-*/
-/*
+
+
 Blockly.Blocks['controls_if_bluetooth'] = {
 helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',
 //
@@ -1272,9 +1272,9 @@ clauseBlock.nextConnection.targetBlock();
 }
 }
 };
-*/
 
-/*
+
+
 Blockly.Blocks['controls_if_color'] = 
 {
   helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',
@@ -1492,4 +1492,4 @@ Blockly.Blocks['controls_if_color'] =
     }
   }
 };
-*/
+
