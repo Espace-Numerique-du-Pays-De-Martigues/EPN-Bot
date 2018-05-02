@@ -468,7 +468,7 @@ Blockly.Arduino['controls_if_bluetooth'] = function(block)
     }
     return code + '\n}\n';
 };
-/*
+
 Blockly.Arduino['controls_if_color'] = function(block) 
 {
   // If/elseif/else condition.
@@ -479,7 +479,7 @@ Blockly.Arduino['controls_if_color'] = function(block)
               'if (strcmp(couleur_zone,' + argument + ')==0)\n'+
               '{\n' + branch + 
               '}';
-  for (n = 1; n <= this.elseifCount_; n++) 
+  /*for (n = 1; n <= this.elseifCount_; n++) 
   {
     argument = Blockly.Arduino.valueToCode(this, 'IF' + n, Blockly.Arduino.ORDER_NONE) || 'false';
     branch = Blockly.Arduino.statementToCode(this, 'DO' + n);
@@ -493,7 +493,7 @@ Blockly.Arduino['controls_if_color'] = function(block)
     code += '\nelse\n
             '{\n' + branch + 
             '}';
-  }
+  }*/
   return code;
 };
-*/
+
