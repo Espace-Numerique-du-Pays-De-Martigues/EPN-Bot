@@ -474,7 +474,7 @@ Blockly.Arduino['controls_if_color'] = function(block)
   var n = 0;
   var argument = Blockly.Arduino.valueToCode(this, 'IF' + n, Blockly.Arduino.ORDER_NONE) || 'false';
   var branch = Blockly.Arduino.statementToCode(this, 'DO' + n);
-  var code =  'resultat_couleur=EpnBot.Getcolorzone()\n'+
+  var code =  'resultat_couleur=EpnBot.Getcolorzone();\n'+
               'if (strcmp(resultat_couleur,' + argument + ')==0)\n'+
               '{\n' + branch + 
               '}';
