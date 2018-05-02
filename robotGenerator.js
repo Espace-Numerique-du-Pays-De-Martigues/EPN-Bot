@@ -6,7 +6,7 @@ var setup_epnbot = 'EpnBot.begin();\n'+
                    'irrecv.enableIRIn();\n'+
                    'pinMode(RXBLU_PIN, INPUT);\n'+
                    'pinMode(TXBLU_PIN, OUTPUT);\n'+
-                   'mySerial.begin(9600);\n'+
+                   'mySerial.begin(57600);\n'+
                    'mySerial.setTimeout(100);';
 
 var define_epnbot =
