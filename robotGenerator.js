@@ -443,30 +443,32 @@ code += ' \nelse \n{\n' + branch + '\n}';
 }
 return code + '\n irrecv.resume();\n}\n';
 };
-/*
-Blockly.Arduino['controls_if_bluetooth'] = function(block) {
-// If/elseif/else condition.
-var n = 0;
-var argument = Blockly.Arduino.valueToCode(this, 'IF' + n,
-Blockly.Arduino.ORDER_NONE) || 'false';
-var branch = Blockly.Arduino.statementToCode(this, 'DO' + n);
-var code = 'while(mySerial.available())\n'+
-'{\n'+
-'resultat=mySerial.readString();\n'+
-' if (resultat == "' + argument + '")\n {\n' + branch + '}';
-for (n = 1; n <= this.elseifCount_; n++) {
-argument = Blockly.Arduino.valueToCode(this, 'IF' + n,
-Blockly.Arduino.ORDER_NONE) || 'false';
-branch = Blockly.Arduino.statementToCode(this, 'DO' + n);
-code += '\nelse if (resultat == "' + argument + '") \n{\n' + branch + '}';
-}
-if (this.elseCount_) {
-branch = Blockly.Arduino.statementToCode(this, 'ELSE');
-code += ' \nelse \n{\n' + branch + '\n}';
-}
-return code + '\n}\n';
-};
 
+
+Blockly.Arduino['controls_if_bluetooth'] = function(block) 
+{
+  // If/elseif/else condition.
+  var n = 0;
+  var argument = Blockly.Arduino.valueToCode(this, 'IF' + n, Blockly.Arduino.ORDER_NONE) || 'false';
+  var branch = Blockly.Arduino.statementToCode(this, 'DO' + n);
+  var code = 'while(mySerial.available())\n'+
+            '{\n'+
+              'resultat=mySerial.readString();\n'+
+              ' if (resultat == "' + argument + '")\n {\n' + branch + '}';
+   for (n = 1; n <= this.elseifCount_; n++) 
+   {
+      argument = Blockly.Arduino.valueToCode(this, 'IF' + n, Blockly.Arduino.ORDER_NONE) || 'false';
+      branch = Blockly.Arduino.statementToCode(this, 'DO' + n);
+      code += '\nelse if (resultat == "' + argument + '") \n{\n' + branch + '}';
+    }
+    if (this.elseCount_) 
+    {
+      branch = Blockly.Arduino.statementToCode(this, 'ELSE');
+      code += ' \nelse \n{\n' + branch + '\n}';
+    }
+    return code + '\n}\n';
+};
+/*
 Blockly.Arduino['controls_if_color'] = function(block) 
 {
   // If/elseif/else condition.
