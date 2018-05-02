@@ -421,13 +421,7 @@ return [ code, Blockly.Arduino.ORDER_ATOMIC ];
 
 
 
-/*
-'if (irrecv.decode(&results))\n'+
-'{\n'+
-' '+statements_faire+
-' irrecv.resume();\n'+
-'}\n';*/
-/*
+
 Blockly.Arduino['controls_if_telecommande'] = function(block) {
 // If/elseif/else condition.
 var n = 0;
@@ -449,7 +443,7 @@ code += ' \nelse \n{\n' + branch + '\n}';
 }
 return code + '\n irrecv.resume();\n}\n';
 };
-
+/*
 Blockly.Arduino['controls_if_bluetooth'] = function(block) {
 // If/elseif/else condition.
 var n = 0;
