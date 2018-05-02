@@ -841,11 +841,16 @@ this.setColour(0);
 
 
 
+
+
+
+
+/*
 Blockly.Blocks['controls_if_if'] = {
-/**
-* Mutator block for if container.
-* @this Blockly.Block
-*/
+//
+// Mutator block for if container.
+// @this Blockly.Block
+//
 init: function() {
 this.setColour(210);
 this.appendDummyInput()
@@ -858,10 +863,10 @@ this.contextMenu = false;
 }
 };
 Blockly.Blocks['controls_if_elseif'] = {
-/**
-* Mutator bolck for else-if condition.
-* @this Blockly.Block
-*/
+//
+// Mutator bolck for else-if condition.
+// @this Blockly.Block
+//
 init: function() {
 this.setColour(210);
 this.appendDummyInput()
@@ -876,36 +881,12 @@ this.contextMenu = false;
 };
 Blockly.Blocks['controls_if_telecommande'] = {
 helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',
-/**
-* Block for if/elseif/else condition.
-* @this Blockly.Block
-*/
+//
+// Block for if/elseif/else condition.
+// @this Blockly.Block
+//
 init: function() {
 this.setColour(210);
-/*this.appendDummyInput()
-.appendField('Si touche de la telecommande appuyé')
-.appendField(new Blockly.FieldDropdown([["On/Off", "0xFD00FF"],
-["Vol+", "0xFD807F"],
-["Vol-", "0xFD906F"],
-["Précédent", "0xFD20DF"],
-["Suivant", "0xFD609F"],
-["Func/Stop", "0xFD40BF"],
-["Play/Pause", "0xFDA05F"],
-["Haut", "0xFD50AF"],
-["Bas", "0xFD10EF"],
-["Eq", "0xFDB04F"],
-["St/rept", "0xFD708F"],
-["0", "0xFD30CF"],
-["1", "0xFD08F7"],
-["2", "0xFD8877"],
-["3", "0xFD48B7"],
-["4", "0xFD28D7"],
-["5", "0xFDA857"],
-["6", "0xFD6897"],
-["7", "0xFD18E7"],
-["8", "0xFD9867"],
-["9", "0xFD58A7"]]),
-"IF0"); */
 this.appendValueInput('IF0')
 .setCheck('telecommande')
 .appendField("Si touche de la télécommande appuyé ");
@@ -937,11 +918,11 @@ return '';
 this.elseifCount_ = 0;
 this.elseCount_ = 0;
 },
-/**
-* Create XML to represent the number of else-if and else inputs.
-* @return {Element} XML storage element.
-* @this Blockly.Block
-*/
+//
+// Create XML to represent the number of else-if and else inputs.
+// @return {Element} XML storage element.
+// @this Blockly.Block
+//
 mutationToDom: function() {
 if (!this.elseifCount_ && !this.elseCount_) {
 return null;
@@ -955,39 +936,15 @@ container.setAttribute('else', 1);
 }
 return container;
 },
-/**
-* Parse XML to restore the else-if and else inputs.
-* @param {!Element} xmlElement XML storage element.
-* @this Blockly.Block
-*/
+//
+// Parse XML to restore the else-if and else inputs.
+// @param {!Element} xmlElement XML storage element.
+// @this Blockly.Block
+//
 domToMutation: function(xmlElement) {
 this.elseifCount_ = parseInt(xmlElement.getAttribute('elseif'), 10) || 0;
 this.elseCount_ = parseInt(xmlElement.getAttribute('else'), 10) || 0;
 for (var i = 1; i <= this.elseifCount_; i++) {
-/* this.appendDummyInput()
-.appendField('Sinon Si touchebis de la telecommande appuyé')
-.appendField(new Blockly.FieldDropdown([["On/Off", "0xFD00FF"],
-["Vol+", "0xFD807F"],
-["Vol-", "0xFD906F"],
-["Précédent", "0xFD20DF"],
-["Suivant", "0xFD609F"],
-["Func/Stop", "0xFD40BF"],
-["Play/Pause", "0xFDA05F"],
-["Haut", "0xFD50AF"],
-["Bas", "0xFD10EF"],
-["Eq", "0xFDB04F"],
-["St/rept", "0xFD708F"],
-["0", "0xFD30CF"],
-["1", "0xFD08F7"],
-["2", "0xFD8877"],
-["3", "0xFD48B7"],
-["4", "0xFD28D7"],
-["5", "0xFDA857"],
-["6", "0xFD6897"],
-["7", "0xFD18E7"],
-["8", "0xFD9867"],
-["9", "0xFD58A7"]]),
-'IF'+i); */
 this.appendValueInput('IF' + i)
 .setCheck('telecommande')
 .appendField("Sinon Si touche de la télécommande appuyé ");
@@ -1001,12 +958,12 @@ this.appendStatementInput('ELSE')
 //.appendField("test 14");
 }
 },
-/**
-* Populate the mutator's dialog with this block's components.
-* @param {!Blockly.Workspace} workspace Mutator's workspace.
-* @return {!Blockly.Block} Root block in mutator.
-* @this Blockly.Block
-*/
+//
+// Populate the mutator's dialog with this block's components.
+// @param {!Blockly.Workspace} workspace Mutator's workspace.
+// @return {!Blockly.Block} Root block in mutator.
+// @this Blockly.Block
+//
 decompose: function(workspace) {
 var containerBlock = Blockly.Block.obtain(workspace, 'controls_if_if');
 containerBlock.initSvg();
@@ -1024,11 +981,11 @@ connection.connect(elseBlock.previousConnection);
 }
 return containerBlock;
 },
-/**
-* Reconfigure this block based on the mutator dialog's components.
-* @param {!Blockly.Block} containerBlock Root block in mutator.
-* @this Blockly.Block
-*/
+//
+// Reconfigure this block based on the mutator dialog's components.
+// @param {!Blockly.Block} containerBlock Root block in mutator.
+// @this Blockly.Block
+//
 compose: function(containerBlock) {
 // Disconnect the else input blocks and remove the inputs.
 if (this.elseCount_) {
@@ -1047,30 +1004,7 @@ while (clauseBlock) {
 switch (clauseBlock.type) {
 case 'controls_if_elseif':
 this.elseifCount_++;
-/*var ifInput = this.appendDummyInput()
-.appendField('Sinon Si touche de la telecommande appuyé')
-.appendField(new Blockly.FieldDropdown([["On/Off", "0xFD00FF"],
-["Vol+", "0xFD807F"],
-["Vol-", "0xFD906F"],
-["Précédent", "0xFD20DF"],
-["Suivant", "0xFD609F"],
-["Func/Stop", "0xFD40BF"],
-["Play/Pause", "0xFDA05F"],
-["Haut", "0xFD50AF"],
-["Bas", "0xFD10EF"],
-["Eq", "0xFDB04F"],
-["St/rept", "0xFD708F"],
-["0", "0xFD30CF"],
-["1", "0xFD08F7"],
-["2", "0xFD8877"],
-["3", "0xFD48B7"],
-["4", "0xFD28D7"],
-["5", "0xFDA857"],
-["6", "0xFD6897"],
-["7", "0xFD18E7"],
-["8", "0xFD9867"],
-["9", "0xFD58A7"]]),
-"IF"+this.elseifCount_); */
+
 var ifInput = this.appendValueInput('IF' + this.elseifCount_)
 .setCheck('telecommande')
 .appendField("Sinon Si touche de la télécommande appuyé ");
@@ -1101,11 +1035,11 @@ clauseBlock = clauseBlock.nextConnection &&
 clauseBlock.nextConnection.targetBlock();
 }
 },
-/**
-* Store pointers to any connected child blocks.
-* @param {!Blockly.Block} containerBlock Root block in mutator.
-* @this Blockly.Block
-*/
+//
+// Store pointers to any connected child blocks.
+// @param {!Blockly.Block} containerBlock Root block in mutator.
+// @this Blockly.Block
+//
 saveConnections: function(containerBlock) {
 var clauseBlock = containerBlock.getInputTargetBlock('STACK');
 var i = 1;
@@ -1134,10 +1068,10 @@ clauseBlock.nextConnection.targetBlock();
 }
 };
 Blockly.Blocks['controls_if_else'] = {
-/**
-* Mutator block for else condition.
-* @this Blockly.Block
-*/
+//
+// Mutator block for else condition.
+// @this Blockly.Block
+//
 init: function() {
 this.setColour(210);
 this.appendDummyInput()
@@ -1149,52 +1083,14 @@ this.setTooltip("Ajouter une condition finale fourre-tout au bloc Si.");
 this.contextMenu = false;
 }
 };
-/*
-//test 1
-Si
-//test 2
-Ajouter, supprimer, ou reordonner les sections pour reconfigurer le bloc Si.
-//test 3
-Sinon Si
-//test 4
-Ajouter une condition au bloc Si.
-//test 5
-url help
-//test 6
-Si touche télécommande xx est pressée
-//test 7
-Faire
-//test 8
-Si une valeur est vrai, alors exécuter certains ordres.
-//test 9
-Si une valeur est vrai, alors exécuter le premier bloc d'ordres. Sinon, exécuter le second bloc d'ordres.
-//test 10
-Si la première valeur est vrai, alors exécuter le premier bloc d'ordres. Sinon, si la seconde valeur est vrai, alors exécuter le second bloc d'ordres.
-//test 11
-Si la première valeur est vrai, alors exécuter le premier bloc d'ordres. Sinon, si la seconde valeur est vrai, alors exécuter le second bloc d'ordres. Si aucune des valeurs n'est vrai, exécuter le dernier bloc d'ordres.
-//test 12
-Sinon Si touche télécommande xx est pressée
-//test 13
-Faire
-//test 14
-Sinon
-//test 15
-Sinon Si touche télécommande xx est pressée
-//test 16
-Faire
-//test 17
-Sinon
-//test 18
-Sinon
-//test 19
-Ajouter une condition finale fourre-tout au bloc Si.
 */
+/*
 Blockly.Blocks['controls_if_bluetooth'] = {
 helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',
-/**
-* Block for if/elseif/else condition.
-* @this Blockly.Block
-*/
+//
+// Block for if/elseif/else condition.
+// @this Blockly.Block
+//
 init: function() {
 this.setColour(210);
 this.appendValueInput('IF0')
@@ -1228,11 +1124,11 @@ return '';
 this.elseifCount_ = 0;
 this.elseCount_ = 0;
 },
-/**
-* Create XML to represent the number of else-if and else inputs.
-* @return {Element} XML storage element.
-* @this Blockly.Block
-*/
+//
+// Create XML to represent the number of else-if and else inputs.
+// @return {Element} XML storage element.
+// @this Blockly.Block
+//
 mutationToDom: function() {
 if (!this.elseifCount_ && !this.elseCount_) {
 return null;
@@ -1246,11 +1142,11 @@ container.setAttribute('else', 1);
 }
 return container;
 },
-/**
-* Parse XML to restore the else-if and else inputs.
-* @param {!Element} xmlElement XML storage element.
-* @this Blockly.Block
-*/
+//
+// Parse XML to restore the else-if and else inputs.
+// @param {!Element} xmlElement XML storage element.
+// @this Blockly.Block
+//
 domToMutation: function(xmlElement) {
 this.elseifCount_ = parseInt(xmlElement.getAttribute('elseif'), 10) || 0;
 this.elseCount_ = parseInt(xmlElement.getAttribute('else'), 10) || 0;
@@ -1268,12 +1164,12 @@ this.appendStatementInput('ELSE')
 //.appendField("test 14");
 }
 },
-/**
-* Populate the mutator's dialog with this block's components.
-* @param {!Blockly.Workspace} workspace Mutator's workspace.
-* @return {!Blockly.Block} Root block in mutator.
-* @this Blockly.Block
-*/
+//
+// Populate the mutator's dialog with this block's components.
+// @param {!Blockly.Workspace} workspace Mutator's workspace.
+// @return {!Blockly.Block} Root block in mutator.
+// @this Blockly.Block
+//
 decompose: function(workspace) {
 var containerBlock = Blockly.Block.obtain(workspace, 'controls_if_if');
 containerBlock.initSvg();
@@ -1291,11 +1187,11 @@ connection.connect(elseBlock.previousConnection);
 }
 return containerBlock;
 },
-/**
-* Reconfigure this block based on the mutator dialog's components.
-* @param {!Blockly.Block} containerBlock Root block in mutator.
-* @this Blockly.Block
-*/
+//
+// Reconfigure this block based on the mutator dialog's components.
+// @param {!Blockly.Block} containerBlock Root block in mutator.
+// @this Blockly.Block
+//
 compose: function(containerBlock) {
 // Disconnect the else input blocks and remove the inputs.
 if (this.elseCount_) {
@@ -1344,11 +1240,11 @@ clauseBlock = clauseBlock.nextConnection &&
 clauseBlock.nextConnection.targetBlock();
 }
 },
-/**
-* Store pointers to any connected child blocks.
-* @param {!Blockly.Block} containerBlock Root block in mutator.
-* @this Blockly.Block
-*/
+//
+// Store pointers to any connected child blocks.
+// @param {!Blockly.Block} containerBlock Root block in mutator.
+// @this Blockly.Block
+//
 saveConnections: function(containerBlock) {
 var clauseBlock = containerBlock.getInputTargetBlock('STACK');
 var i = 1;
@@ -1376,14 +1272,16 @@ clauseBlock.nextConnection.targetBlock();
 }
 }
 };
+*/
 
+/*
 Blockly.Blocks['controls_if_color'] = 
 {
   helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',
-  /**
-  * Block for if/elseif/else condition.
-  * @this Blockly.Block
-  */
+  //
+  // Block for if/elseif/else condition.
+  // @this Blockly.Block
+  //
   init: function() 
   {
     this.setColour(210);
@@ -1426,11 +1324,11 @@ Blockly.Blocks['controls_if_color'] =
     this.elseifCount_ = 0;
     this.elseCount_ = 0;
   },
-  /**
-  * Create XML to represent the number of else-if and else inputs.
-  * @return {Element} XML storage element.
-  * @this Blockly.Block
-  */
+  //
+  // Create XML to represent the number of else-if and else inputs.
+  // @return {Element} XML storage element.
+  // @this Blockly.Block
+  //
   mutationToDom: function() 
   {
     if (!this.elseifCount_ && !this.elseCount_) 
@@ -1448,11 +1346,11 @@ Blockly.Blocks['controls_if_color'] =
     }
     return container;
   },
-  /**
-  * Parse XML to restore the else-if and else inputs.
-  * @param {!Element} xmlElement XML storage element.
-  * @this Blockly.Block
-  */
+  //
+  // Parse XML to restore the else-if and else inputs.
+  // @param {!Element} xmlElement XML storage element.
+  // @this Blockly.Block
+  //
   domToMutation: function(xmlElement) 
   {
     this.elseifCount_ = parseInt(xmlElement.getAttribute('elseif'), 10) || 0;
@@ -1473,12 +1371,12 @@ Blockly.Blocks['controls_if_color'] =
       //.appendField("test 14");
     }
   },
-  /**
-  * Populate the mutator's dialog with this block's components.
-  * @param {!Blockly.Workspace} workspace Mutator's workspace.
-  * @return {!Blockly.Block} Root block in mutator.
-  * @this Blockly.Block
-  */
+  //
+  // Populate the mutator's dialog with this block's components.
+  // @param {!Blockly.Workspace} workspace Mutator's workspace.
+  // @return {!Blockly.Block} Root block in mutator.
+  // @this Blockly.Block
+  //
   decompose: function(workspace) 
   {
     var containerBlock = Blockly.Block.obtain(workspace, 'controls_if_if');
@@ -1499,11 +1397,11 @@ Blockly.Blocks['controls_if_color'] =
     }
     return containerBlock;
   },
-  /**
-  * Reconfigure this block based on the mutator dialog's components.
-  * @param {!Blockly.Block} containerBlock Root block in mutator.
-  * @this Blockly.Block
-  */
+  //
+  // Reconfigure this block based on the mutator dialog's components.
+  // @param {!Blockly.Block} containerBlock Root block in mutator.
+  // @this Blockly.Block
+  //
   compose: function(containerBlock) 
   {
     // Disconnect the else input blocks and remove the inputs.
@@ -1561,11 +1459,11 @@ Blockly.Blocks['controls_if_color'] =
       clauseBlock = clauseBlock.nextConnection && clauseBlock.nextConnection.targetBlock();
     }
   },
-  /**
-  * Store pointers to any connected child blocks.
-  * @param {!Blockly.Block} containerBlock Root block in mutator.
-  * @this Blockly.Block
-  */
+  //
+  // Store pointers to any connected child blocks.
+  // @param {!Blockly.Block} containerBlock Root block in mutator.
+  // @this Blockly.Block
+  //
   saveConnections: function(containerBlock) 
   {
     var clauseBlock = containerBlock.getInputTargetBlock('STACK');
@@ -1594,3 +1492,4 @@ Blockly.Blocks['controls_if_color'] =
     }
   }
 };
+*/
