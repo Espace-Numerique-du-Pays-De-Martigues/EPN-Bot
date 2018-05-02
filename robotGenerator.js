@@ -29,8 +29,9 @@ var define_epnbot =
     
   'int etat_robot=0;\n'+
   'IRrecv irrecv(RECV_PIN);\n'+      
-  'decode_results results;\n'+ 
-  'String resultat;\n'+
+  'decode_results resultat_irremote;\n'+ 
+  'String resultat_bluetooth;\n'+
+  'char resultat_couleur;\n'+
 
   '\n'+
     
@@ -230,7 +231,7 @@ Blockly.Arduino['if_telecommande'] = function(block) {
   var statements_faire = Blockly.Arduino.statementToCode(block, 'Faire');
   var dropdown_option = block.getFieldValue('id_telecommande');
   
-  var code =  'if (irrecv.decode(&results))\n'+ 
+  var code =  'if (irrecv.decode(&resultat_irremote))\n'+ 
               '{\n'+ 
               '   '+statements_faire+ 
               '   irrecv.resume();\n'+
@@ -428,14 +429,14 @@ var n = 0;
 var argument = Blockly.Arduino.valueToCode(this, 'IF' + n,
 Blockly.Arduino.ORDER_NONE) || 'false';
 var branch = Blockly.Arduino.statementToCode(this, 'DO' + n);
-var code = 'if (irrecv.decode(&results))\n'+
+var code = 'if (irrecv.decode(&resultat_irremote))\n'+
 '{\n'+
-' if (results.value == ' + argument + ')\n {\n' + branch + '}';
+' if (resultat_irremote.value == ' + argument + ')\n {\n' + branch + '}';
 for (n = 1; n <= this.elseifCount_; n++) {
 argument = Blockly.Arduino.valueToCode(this, 'IF' + n,
 Blockly.Arduino.ORDER_NONE) || 'false';
 branch = Blockly.Arduino.statementToCode(this, 'DO' + n);
-code += ' \nelse if (results.value == ' + argument + ') \n{\n' + branch + '}';
+code += ' \nelse if (resultat_irremote.value == ' + argument + ') \n{\n' + branch + '}';
 }
 if (this.elseCount_) {
 branch = Blockly.Arduino.statementToCode(this, 'ELSE');
@@ -453,13 +454,13 @@ Blockly.Arduino['controls_if_bluetooth'] = function(block)
   var branch = Blockly.Arduino.statementToCode(this, 'DO' + n);
   var code = 'while(mySerial.available())\n'+
             '{\n'+
-              'resultat=mySerial.readString();\n'+
-              ' if (resultat == "' + argument + '")\n {\n' + branch + '}';
+              'resultat_bluetooth=mySerial.readString();\n'+
+              ' if (resultat_bluetooth == "' + argument + '")\n {\n' + branch + '}';
    for (n = 1; n <= this.elseifCount_; n++) 
    {
       argument = Blockly.Arduino.valueToCode(this, 'IF' + n, Blockly.Arduino.ORDER_NONE) || 'false';
       branch = Blockly.Arduino.statementToCode(this, 'DO' + n);
-      code += '\nelse if (resultat == "' + argument + '") \n{\n' + branch + '}';
+      code += '\nelse if (resultat_bluetooth == "' + argument + '") \n{\n' + branch + '}';
     }
     if (this.elseCount_) 
     {
@@ -475,15 +476,15 @@ Blockly.Arduino['controls_if_color'] = function(block)
   var n = 0;
   var argument = Blockly.Arduino.valueToCode(this, 'IF' + n, Blockly.Arduino.ORDER_NONE) || 'false';
   var branch = Blockly.Arduino.statementToCode(this, 'DO' + n);
-  var code =  'char couleur_zone=EpnBot.Getcolorzone()\n'+
-              'if (strcmp(couleur_zone,' + argument + ')==0)\n'+
+  var code =  'resultat_couleur=EpnBot.Getcolorzone()\n'+
+              'if (strcmp(resultat_couleur,' + argument + ')==0)\n'+
               '{\n' + branch + 
               '}';
   for (n = 1; n <= this.elseifCount_; n++) 
   {
     argument = Blockly.Arduino.valueToCode(this, 'IF' + n, Blockly.Arduino.ORDER_NONE) || 'false';
     branch = Blockly.Arduino.statementToCode(this, 'DO' + n);
-    code += '\nelse if (strcmp(couleur_zone,' + argument + ')==0)\n'+
+    code += '\nelse if (strcmp(resultat_couleur,' + argument + ')==0)\n'+
             '{\n' + branch + 
             '}';
   }
