@@ -1576,7 +1576,7 @@ Blockly.Blocks['controls_if_ligne'] =
     for (var i = 1; i <= this.elseifCount_; i++) 
     {
       this.appendValueInput('IF' + i)
-      .setCheck('Couleur')
+      .setCheck('CouleurLigne')
       .appendField("Sinon Si ligne détecté ");
       this.appendStatementInput('DO' + i)
       .appendField("Faire");
