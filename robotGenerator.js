@@ -479,7 +479,7 @@ Blockly.Arduino['controls_if_color'] = function(block)
               'if (strcmp(couleur_zone,' + argument + ')==0)\n'+
               '{\n' + branch + 
               '}';
-  /*for (n = 1; n <= this.elseifCount_; n++) 
+  for (n = 1; n <= this.elseifCount_; n++) 
   {
     argument = Blockly.Arduino.valueToCode(this, 'IF' + n, Blockly.Arduino.ORDER_NONE) || 'false';
     branch = Blockly.Arduino.statementToCode(this, 'DO' + n);
@@ -490,10 +490,10 @@ Blockly.Arduino['controls_if_color'] = function(block)
   if (this.elseCount_) 
   {
     branch = Blockly.Arduino.statementToCode(this, 'ELSE');
-    code += '\nelse\n
+    code += '\nelse\n'+
             '{\n' + branch + 
             '}';
-  }*/
+  }
   return code;
 };
 
