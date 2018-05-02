@@ -751,7 +751,7 @@ Blockly.Blocks['CouleurZone'] = {
     });*/
     this.appendDummyInput()
         .appendField("Couleur Zone");
-    this.setOutput(true, 'Text');
+    this.setOutput(true, 'Couleur');
     this.setColour(0);
     this.setTooltip('Retourne la couleur sous le robot');
    }
@@ -770,7 +770,7 @@ Blockly.Blocks['CouleurLigne'] = {
                                               ["GRIS", "135"],                                                 
                                               ["NOIR", "170"]]),                                                     
                                               "Couleur_ligne"); 
-    this.setOutput(true, 'Boolean');
+    this.setOutput(true, 'CouleurLigne');
     this.setColour(0);
     this.setTooltip('Retourne la couleur de la ligne (suiveur de ligne)');
    }
