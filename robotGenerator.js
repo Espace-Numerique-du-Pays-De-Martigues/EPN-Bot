@@ -2,14 +2,14 @@ goog.provide('Blockly.Arduino.Robotdulab');
 goog.require('Blockly.Arduino');
 
 
-/*var setup_epnbot = 'EpnBot.begin();\n'+
+var setup_epnbot = 'EpnBot.begin();\n'+
                    'irrecv.enableIRIn();\n'+
                    'pinMode(RXBLU_PIN, INPUT);\n'+
                    'pinMode(TXBLU_PIN, OUTPUT);\n'+
                    'mySerial.begin(9600);\n'+
-                   'mySerial.setTimeout(100);';*/
+                   'mySerial.setTimeout(100);';
 
-/*var define_epnbot =
+var define_epnbot =
   '#include "EPNBot.h"\n'+
   '#include <SoftwareSerial.h>\n'+
   '#include <IRremote.h>\n\n'+
@@ -36,7 +36,7 @@ goog.require('Blockly.Arduino');
     
   'EPNBot EpnBot(TRIGGER_PIN, ECHO_PIN, ROUE_DROITE_PIN, ROUE_GAUCHE_PIN, ANNEAU_LED_PIN, GRAYSCALE_SENSOR, RELAI_ALIM_MOTEUR, INTER_BOT);\n';
   //'RobotDuLAB robotDuLAB(TRIGGER_PIN, ECHO_PIN, ROUE_DROITE_PIN, ROUE_GAUCHE_PIN, ANNEAU_LED_PIN);\n';
-*/
+
 /*Blockly.Arduino ['Avancer'] = function (block)  {
   Blockly.Arduino.setups_["setup_epnbot"] = setup_epnbot;
   Blockly.Arduino.definitions_["define_epnbot"] = define_epnbot; 
@@ -427,6 +427,7 @@ return [ code, Blockly.Arduino.ORDER_ATOMIC ];
 ' '+statements_faire+
 ' irrecv.resume();\n'+
 '}\n';*/
+/*
 Blockly.Arduino['controls_if_telecommande'] = function(block) {
 // If/elseif/else condition.
 var n = 0;
@@ -499,3 +500,4 @@ Blockly.Arduino['controls_if_color'] = function(block)
   }
   return code;
 };
+*/
