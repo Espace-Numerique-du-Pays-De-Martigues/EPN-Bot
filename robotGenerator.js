@@ -31,7 +31,7 @@ var define_epnbot =
   'IRrecv irrecv(RECV_PIN);\n'+      
   'decode_results resultat_irremote;\n'+ 
   'String resultat_bluetooth;\n'+
-  'char resultat_couleur;\n'+
+  'String resultat_couleur;\n'+
   'int resultat_ligne=0;\n'+
 
   '\n'+
@@ -475,14 +475,14 @@ Blockly.Arduino['controls_if_color'] = function(block)
   var argument = Blockly.Arduino.valueToCode(this, 'IF' + n, Blockly.Arduino.ORDER_NONE) || 'false';
   var branch = Blockly.Arduino.statementToCode(this, 'DO' + n);
   var code =  'resultat_couleur=EpnBot.Getcolorzone();\n'+
-              'if (strcmp(resultat_couleur,' + argument + ')==0)\n'+
+              'if (resultat_couleur=="' + argument + '")\n'+
               '{\n' + branch + 
               '}';
   for (n = 1; n <= this.elseifCount_; n++) 
   {
     argument = Blockly.Arduino.valueToCode(this, 'IF' + n, Blockly.Arduino.ORDER_NONE) || 'false';
     branch = Blockly.Arduino.statementToCode(this, 'DO' + n);
-    code += '\nelse if (strcmp(resultat_couleur,' + argument + ')==0)\n'+
+    code += '\nelse if (resultat_couleur=="' + argument + '")\n'+
             '{\n' + branch + 
             '}';
   }
