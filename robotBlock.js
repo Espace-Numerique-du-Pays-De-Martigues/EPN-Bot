@@ -765,7 +765,7 @@ Blockly.Blocks['CouleurLigne'] = {
       "nextStatement": null
     });*/
     this.appendDummyInput()
-        .appendField("couleur suiveur de ligne détecté")
+        .appendField("couleur ligne")
         .appendField(new Blockly.FieldDropdown([["BLANC", "100"],                                                 
                                               ["GRIS", "135"],                                                 
                                               ["NOIR", "170"]]),                                                     
