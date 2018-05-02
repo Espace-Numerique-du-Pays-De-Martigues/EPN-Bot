@@ -502,7 +502,7 @@ Blockly.Arduino['controls_if_ligne'] = function(block)
   var n = 0;
   var argument = Blockly.Arduino.valueToCode(this, 'IF' + n, Blockly.Arduino.ORDER_NONE) || 'false';
   var branch = Blockly.Arduino.statementToCode(this, 'DO' + n);
-  var code =  'resultat_ligne=EpnBot.Getsuiveurligne()\n'+
+  var code =  'resultat_ligne=EpnBot.Getsuiveurligne();\n'+
               'if ('+ argument +')\n'+
               '{\n' + branch + 
               '}';
