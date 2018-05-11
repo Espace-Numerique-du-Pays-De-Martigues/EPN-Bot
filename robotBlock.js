@@ -845,7 +845,7 @@ this.setColour(0);
 
 
 
-
+/*
 Blockly.Blocks['controls_if_if'] = {
 //
 // Mutator block for if container.
@@ -878,7 +878,7 @@ this.setTooltip("Ajouter une condition au bloc Si.");
 //this.setTooltip("test 4");
 this.contextMenu = false;
 }
-};
+};*/
 Blockly.Blocks['controls_if_telecommande'] = {
 helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',
 //
