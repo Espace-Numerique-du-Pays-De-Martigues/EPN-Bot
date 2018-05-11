@@ -845,8 +845,8 @@ this.setColour(0);
 
 
 
-/*
-Blockly.Blocks['controls_if_if'] = {
+
+Blockly.Blocks['controls_if_if_epn'] = {
 //
 // Mutator block for if container.
 // @this Blockly.Block
@@ -862,7 +862,7 @@ this.setTooltip("Ajouter, supprimer, ou reordonner les sections pour reconfigure
 this.contextMenu = false;
 }
 };
-Blockly.Blocks['controls_if_elseif'] = {
+Blockly.Blocks['controls_if_elseif_epn'] = {
 //
 // Mutator bolck for else-if condition.
 // @this Blockly.Block
@@ -878,7 +878,8 @@ this.setTooltip("Ajouter une condition au bloc Si.");
 //this.setTooltip("test 4");
 this.contextMenu = false;
 }
-};*/
+};
+
 Blockly.Blocks['controls_if_telecommande'] = {
 helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',
 //
@@ -895,8 +896,8 @@ this.appendStatementInput('DO0')
 //.appendField("test 7");
 this.setPreviousStatement(true);
 this.setNextStatement(true);
-this.setMutator(new Blockly.Mutator(['controls_if_elseif',
-'controls_if_else']));
+this.setMutator(new Blockly.Mutator(['controls_if_elseif_epn',
+'controls_if_else_epn']));
 // Assign 'this' to a variable for use in the tooltip closure below.
 var thisBlock = this;
 this.setTooltip(function() {
@@ -965,17 +966,17 @@ this.appendStatementInput('ELSE')
 // @this Blockly.Block
 //
 decompose: function(workspace) {
-var containerBlock = Blockly.Block.obtain(workspace, 'controls_if_if');
+var containerBlock = Blockly.Block.obtain(workspace, 'controls_if_if_epn');
 containerBlock.initSvg();
 var connection = containerBlock.getInput('STACK').connection;
 for (var i = 1; i <= this.elseifCount_; i++) {
-var elseifBlock = Blockly.Block.obtain(workspace, 'controls_if_elseif');
+var elseifBlock = Blockly.Block.obtain(workspace, 'controls_if_elseif_epn');
 elseifBlock.initSvg();
 connection.connect(elseifBlock.previousConnection);
 connection = elseifBlock.nextConnection;
 }
 if (this.elseCount_) {
-var elseBlock = Blockly.Block.obtain(workspace, 'controls_if_else');
+var elseBlock = Blockly.Block.obtain(workspace, 'controls_if_else_epn');
 elseBlock.initSvg();
 connection.connect(elseBlock.previousConnection);
 }
@@ -1019,7 +1020,7 @@ if (clauseBlock.statementConnection_) {
 doInput.connection.connect(clauseBlock.statementConnection_);
 }
 break;
-case 'controls_if_else':
+case 'controls_if_else_epn':
 this.elseCount_++;
 var elseInput = this.appendStatementInput('ELSE');
 elseInput.appendField("Sinon");
@@ -1045,7 +1046,7 @@ var clauseBlock = containerBlock.getInputTargetBlock('STACK');
 var i = 1;
 while (clauseBlock) {
 switch (clauseBlock.type) {
-case 'controls_if_elseif':
+case 'controls_if_elseif_epn':
 var inputIf = this.getInput('IF' + i);
 var inputDo = this.getInput('DO' + i);
 clauseBlock.valueConnection_ =
@@ -1054,7 +1055,7 @@ clauseBlock.statementConnection_ =
 inputDo && inputDo.connection.targetConnection;
 i++;
 break;
-case 'controls_if_else':
+case 'controls_if_else_epn':
 var inputDo = this.getInput('ELSE');
 clauseBlock.statementConnection_ =
 inputDo && inputDo.connection.targetConnection;
@@ -1067,7 +1068,8 @@ clauseBlock.nextConnection.targetBlock();
 }
 }
 };
-Blockly.Blocks['controls_if_else'] = {
+
+Blockly.Blocks['controls_if_else_epn'] = {
 //
 // Mutator block for else condition.
 // @this Blockly.Block
@@ -1101,8 +1103,8 @@ this.appendStatementInput('DO0')
 //.appendField("test 7");
 this.setPreviousStatement(true);
 this.setNextStatement(true);
-this.setMutator(new Blockly.Mutator(['controls_if_elseif',
-'controls_if_else']));
+this.setMutator(new Blockly.Mutator(['controls_if_elseif_epn',
+'controls_if_else_epn']));
 // Assign 'this' to a variable for use in the tooltip closure below.
 var thisBlock = this;
 this.setTooltip(function() {
@@ -1171,17 +1173,17 @@ this.appendStatementInput('ELSE')
 // @this Blockly.Block
 //
 decompose: function(workspace) {
-var containerBlock = Blockly.Block.obtain(workspace, 'controls_if_if');
+var containerBlock = Blockly.Block.obtain(workspace, 'controls_if_if_epn');
 containerBlock.initSvg();
 var connection = containerBlock.getInput('STACK').connection;
 for (var i = 1; i <= this.elseifCount_; i++) {
-var elseifBlock = Blockly.Block.obtain(workspace, 'controls_if_elseif');
+var elseifBlock = Blockly.Block.obtain(workspace, 'controls_if_elseif_epn');
 elseifBlock.initSvg();
 connection.connect(elseifBlock.previousConnection);
 connection = elseifBlock.nextConnection;
 }
 if (this.elseCount_) {
-var elseBlock = Blockly.Block.obtain(workspace, 'controls_if_else');
+var elseBlock = Blockly.Block.obtain(workspace, 'controls_if_else_epn');
 elseBlock.initSvg();
 connection.connect(elseBlock.previousConnection);
 }
@@ -1208,7 +1210,7 @@ this.elseifCount_ = 0;
 var clauseBlock = containerBlock.getInputTargetBlock('STACK');
 while (clauseBlock) {
 switch (clauseBlock.type) {
-case 'controls_if_elseif':
+case 'controls_if_elseif_epn':
 this.elseifCount_++;
 var ifInput = this.appendValueInput('IF' + this.elseifCount_)
 .setCheck('bluetooth')
@@ -1224,7 +1226,7 @@ if (clauseBlock.statementConnection_) {
 doInput.connection.connect(clauseBlock.statementConnection_);
 }
 break;
-case 'controls_if_else':
+case 'controls_if_else_epn':
 this.elseCount_++;
 var elseInput = this.appendStatementInput('ELSE');
 elseInput.appendField("Sinon");
@@ -1250,7 +1252,7 @@ var clauseBlock = containerBlock.getInputTargetBlock('STACK');
 var i = 1;
 while (clauseBlock) {
 switch (clauseBlock.type) {
-case 'controls_if_elseif':
+case 'controls_if_elseif_epn':
 var inputIf = this.getInput('IF' + i);
 var inputDo = this.getInput('DO' + i);
 clauseBlock.valueConnection_ =
@@ -1259,7 +1261,7 @@ clauseBlock.statementConnection_ =
 inputDo && inputDo.connection.targetConnection;
 i++;
 break;
-case 'controls_if_else':
+case 'controls_if_else_epn':
 var inputDo = this.getInput('ELSE');
 clauseBlock.statementConnection_ =
 inputDo && inputDo.connection.targetConnection;
@@ -1293,8 +1295,8 @@ Blockly.Blocks['controls_if_color'] =
     //.appendField("test 7");
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setMutator(new Blockly.Mutator(['controls_if_elseif',
-    'controls_if_else']));
+    this.setMutator(new Blockly.Mutator(['controls_if_elseif_epn',
+    'controls_if_else_epn']));
     // Assign 'this' to a variable for use in the tooltip closure below.
     var thisBlock = this;
     this.setTooltip(function() 
@@ -1379,19 +1381,19 @@ Blockly.Blocks['controls_if_color'] =
   //
   decompose: function(workspace) 
   {
-    var containerBlock = Blockly.Block.obtain(workspace, 'controls_if_if');
+    var containerBlock = Blockly.Block.obtain(workspace, 'controls_if_if_epn');
     containerBlock.initSvg();
     var connection = containerBlock.getInput('STACK').connection;
     for (var i = 1; i <= this.elseifCount_; i++) 
     {
-      var elseifBlock = Blockly.Block.obtain(workspace, 'controls_if_elseif');
+      var elseifBlock = Blockly.Block.obtain(workspace, 'controls_if_elseif_epn');
       elseifBlock.initSvg();
       connection.connect(elseifBlock.previousConnection);
       connection = elseifBlock.nextConnection;
     }
     if (this.elseCount_) 
     {
-      var elseBlock = Blockly.Block.obtain(workspace, 'controls_if_else');
+      var elseBlock = Blockly.Block.obtain(workspace, 'controls_if_else_epn');
       elseBlock.initSvg();
       connection.connect(elseBlock.previousConnection);
     }
@@ -1423,7 +1425,7 @@ Blockly.Blocks['controls_if_color'] =
     {
       switch (clauseBlock.type) 
       {
-        case 'controls_if_elseif':
+        case 'controls_if_elseif_epn':
           this.elseifCount_++;
           var ifInput = this.appendValueInput('IF' + this.elseifCount_)
           .setCheck('Couleur')
@@ -1442,7 +1444,7 @@ Blockly.Blocks['controls_if_color'] =
           }
           break;
           
-        case 'controls_if_else':
+        case 'controls_if_else_epn':
           this.elseCount_++;
           var elseInput = this.appendStatementInput('ELSE');
           elseInput.appendField("Sinon");
@@ -1472,7 +1474,7 @@ Blockly.Blocks['controls_if_color'] =
     {
       switch (clauseBlock.type) 
       {
-        case 'controls_if_elseif':
+        case 'controls_if_elseif_epn':
           var inputIf = this.getInput('IF' + i);
           var inputDo = this.getInput('DO' + i);
           clauseBlock.valueConnection_ = inputIf && inputIf.connection.targetConnection;
@@ -1480,7 +1482,7 @@ Blockly.Blocks['controls_if_color'] =
           i++;
           break;
 
-        case 'controls_if_else':
+        case 'controls_if_else_epn':
           var inputDo = this.getInput('ELSE');
           clauseBlock.statementConnection_ = inputDo && inputDo.connection.targetConnection;
           break;
@@ -1511,8 +1513,8 @@ Blockly.Blocks['controls_if_ligne'] =
     //.appendField("test 7");
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setMutator(new Blockly.Mutator(['controls_if_elseif',
-    'controls_if_else']));
+    this.setMutator(new Blockly.Mutator(['controls_if_elseif_epn',
+    'controls_if_else_epn']));
     // Assign 'this' to a variable for use in the tooltip closure below.
     var thisBlock = this;
     this.setTooltip(function() 
@@ -1597,19 +1599,19 @@ Blockly.Blocks['controls_if_ligne'] =
   //
   decompose: function(workspace) 
   {
-    var containerBlock = Blockly.Block.obtain(workspace, 'controls_if_if');
+    var containerBlock = Blockly.Block.obtain(workspace, 'controls_if_if_epn');
     containerBlock.initSvg();
     var connection = containerBlock.getInput('STACK').connection;
     for (var i = 1; i <= this.elseifCount_; i++) 
     {
-      var elseifBlock = Blockly.Block.obtain(workspace, 'controls_if_elseif');
+      var elseifBlock = Blockly.Block.obtain(workspace, 'controls_if_elseif_epn');
       elseifBlock.initSvg();
       connection.connect(elseifBlock.previousConnection);
       connection = elseifBlock.nextConnection;
     }
     if (this.elseCount_) 
     {
-      var elseBlock = Blockly.Block.obtain(workspace, 'controls_if_else');
+      var elseBlock = Blockly.Block.obtain(workspace, 'controls_if_else_epn');
       elseBlock.initSvg();
       connection.connect(elseBlock.previousConnection);
     }
@@ -1641,7 +1643,7 @@ Blockly.Blocks['controls_if_ligne'] =
     {
       switch (clauseBlock.type) 
       {
-        case 'controls_if_elseif':
+        case 'controls_if_elseif_epn':
           this.elseifCount_++;
           var ifInput = this.appendValueInput('IF' + this.elseifCount_)
           .setCheck('CouleurLigne')
@@ -1660,7 +1662,7 @@ Blockly.Blocks['controls_if_ligne'] =
           }
           break;
           
-        case 'controls_if_else':
+        case 'controls_if_else_epn':
           this.elseCount_++;
           var elseInput = this.appendStatementInput('ELSE');
           elseInput.appendField("Sinon");
@@ -1690,7 +1692,7 @@ Blockly.Blocks['controls_if_ligne'] =
     {
       switch (clauseBlock.type) 
       {
-        case 'controls_if_elseif':
+        case 'controls_if_elseif_epn':
           var inputIf = this.getInput('IF' + i);
           var inputDo = this.getInput('DO' + i);
           clauseBlock.valueConnection_ = inputIf && inputIf.connection.targetConnection;
@@ -1698,7 +1700,7 @@ Blockly.Blocks['controls_if_ligne'] =
           i++;
           break;
 
-        case 'controls_if_else':
+        case 'controls_if_else_epn':
           var inputDo = this.getInput('ELSE');
           clauseBlock.statementConnection_ = inputDo && inputDo.connection.targetConnection;
           break;
